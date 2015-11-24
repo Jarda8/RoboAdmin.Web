@@ -1,0 +1,92 @@
+.form-control.k-textbox,
+.form-control.k-button,
+.form-control.k-dropdown
+{
+    padding: 0;
+    width: 100%;
+}
+
+.info-box-icon
+{
+    width: 120px;
+}
+
+.info-box-content
+{
+    margin-left: 130px;
+}
+
+.vertical-spacing-M
+{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.k-grid > table > tbody > tr:hover,
+.k-grid-content > table > tbody > tr:hover
+ {
+         background-color: #e5e5e5;
+ }
+
+
+/*.k-grid tr td
+{
+    border-color: #f4f4f4;
+}
+
+.k-alt, .k-separator, .k-alt.k-resource, .k-pivot-layout > tbody > tr:first-child > td:first-child
+{
+    background-color: inherit;
+}
+
+.k-block,.k-header,.k-grid-header,.k-toolbar,.k-grouping-header,.k-pager-wrap,.k-button,.k-draghandle,.k-treemap-tile,html .km-pane-wrapper .k-header
+{
+    background-color: inherit;
+}
+
+.k-header,.k-grid-header-wrap,.k-grid .k-grouping-header,.k-grid-header,.k-pager-wrap,.k-pager-wrap .k-textbox,.k-pager-wrap .k-link,.k-grouping-header .k-group-indicator,.k-gantt-toolbar .k-state-default
+{
+    border-color: #f4f4f4;   
+}
+
+.k-grid-header th.k-header,
+.k-filter-row th 
+{
+    font-weight: bold;
+}
+
+.k-grid-header th.k-header .k-grid-filter, 
+.k-filter-row th .k-grid-filter
+{
+    font-weight: normal;
+}*/
+
+/* Skrýt vertikální scrollbar u gridu */
+.k-grid-header
+{
+   padding: 0 !important;
+}
+.k-grid-content
+{
+    overflow-y: visible;
+}
+
+.k-multicheck-wrap
+{
+    width: 180px;
+}
+
+.k-multicheck-wrap input[type="checkbox"]
+{
+    margin-right: 0.5em;
+}
+
+.k-multicheck-wrap .k-label
+{
+    font-weight: normal;
+}
+
+.k-grid-filter .k-icon
+{
+    opacity: 0.4;
+}

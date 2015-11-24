@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="lib/jquery.js"></script>
+</head>
+<body class="skin-blue sidebar-mini">
+    <div id="app-container" class="wrapper"></div>
+    <script>
+        $.get( "app/layouts/main/templates.html", function( data ) {
+            $( "#app-container" )
+              .append(data);
+          });
+        $.get( "app/views/index/templates.html", function( data ) {
+            $( "#app-container" )
+              .append(data);
+          });
+        $.get( "app/views/events/templates.html", function( data ) {
+            $( "#app-container" )
+              .append(data);
+          });
+        $.get( "app/views/customers/templates.html", function( data ) {
+            $( "#app-container" )
+              .append(data);
+          });
+    </script>
+    <script data-main="app/init.js" src="lib/require.js"></script>
+</body>
+</html>
