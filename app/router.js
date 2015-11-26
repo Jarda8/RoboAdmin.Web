@@ -17,11 +17,19 @@ define([
 	        });
 	    });
 
-	    router.route("customers", function () {
-	        require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {
-	            layoutMain.showIn("#layout-content", viewCustomers);	           
-	        });
-	    });
+		router.route("customers", function () {
+			require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {
+				layoutMain.showIn("#layout-content", viewCustomers);
+			});
+		});
+
+
+
+		router.route("user/profile", function () {
+			require(["layouts/main/main", "views/user/profile"], function (layoutMain,viewProfile) {
+				layoutMain.showIn("#layout-content", viewProfile);
+			});
+		});
 
 	    return router;
 	}
