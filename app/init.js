@@ -59,6 +59,7 @@
         "bootstrap",       
         "views/index/index",
         "views/events/events",
+        "views/events/event-detail",
         "views/customers/customers"
     ], function (layoutMain, router) {
         layoutMain.render("#app-container");

@@ -17,6 +17,12 @@ define([
 	        });
 	    });
 
+	    router.route("event-detail/:id", function (id) {
+	        require(["layouts/main/main", "views/events/event-detail"], function (layoutMain, viewEventDetail) {              
+	            layoutMain.showIn("#layout-content", viewEventDetail(id));	          
+	        });
+	    });
+
 	    router.route("customers", function () {
 	        require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {
 	            layoutMain.showIn("#layout-content", viewCustomers);	           
