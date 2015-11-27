@@ -30,8 +30,12 @@
           });
         $.get( "app/views/customers/customers-template.html", function( data ) {
             $( "#app-container" )
-              .append(data);
-          });
+                    .append(data);
+        });
+        $.get( "app/views/user/templates.html", function( data ) {
+            $( "#app-container" )
+                    .append(data);
+        });
     </script>
     <script data-main="app/init.js" src="lib/require.js"></script>
 </body>

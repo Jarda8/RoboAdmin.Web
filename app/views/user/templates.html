@@ -1,0 +1,98 @@
+﻿<script id="profile" type="text/x-kendo-template">
+    <section class="content-header">
+        <h1>Profil uživatele</h1>
+
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <td>Jméno a příjmení:</td>
+                                    <td>Jan Malý</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Uživatelské jméno:</td>
+                                    <td>malyjan</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Heslo:</td>
+                                    <td>****************</td>
+                                    <td>(<a href="#change-password" data-bind="events: {click: showChangePasswordModal}">Změnit heslo</a>)</td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail:</td>
+                                    <td>malyjan@example.com</td>
+                                    <td>(<a href="#change-email" data-bind="events: {click: showChangeEmailModal}">Změnit e-mail</a>)</td>
+                                </tr>
+                                <tr>
+                                    <td>Společnost:</td>
+                                    <td>Example Industries</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal" id="change-password-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Změna hesla</h4>
+                </div>
+                <div class="modal-body">
+                    <p>TODO...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Zpět</button>
+                    <button type="button" class="btn btn-primary">Uložit</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+    <div class="modal" id="change-email-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Změna e-mailu</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="change-email-form">
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">E-mail</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="email" placeholder="Zadejte kontaktní e-mail" type="email" required data-email-msg="Zadejte platný e-mail">
+                            </div>
+                            <span class="k-invalid-msg" data-for="email"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Zpět</button>
+                    <button type="button" class="btn btn-primary" data-bind="events: {click: saveChangedEmail}">Uložit</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</script>

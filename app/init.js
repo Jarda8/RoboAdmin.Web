@@ -26,6 +26,12 @@
                     "lib/kendo/kendo.core.min"
                 ]
             },
+            "lib/kendo/kendo.validator.min": {
+                deps: [
+                    "jquery",
+                    "lib/kendo/kendo.core.min"
+                ]
+            },
             "lib/kendo/cultures/kendo.culture.cs-CZ.min": {
                 deps: [
                     "lib/kendo/kendo.core.min",
@@ -60,7 +66,8 @@
         "views/index/index",
         "views/events/events",
         "views/events/event-detail",
-        "views/customers/customers"
+        "views/customers/customers",
+        "views/user/profile"
     ], function (layoutMain, router) {
         layoutMain.render("#app-container");
 

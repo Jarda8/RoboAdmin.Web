@@ -29,6 +29,12 @@ define([
 	        });
 	    });
 
+            router.route("user/profile", function () {
+                    require(["layouts/main/main", "views/user/profile"], function (layoutMain,viewProfile) {
+                            layoutMain.showIn("#layout-content", viewProfile);
+                    });
+            });
+
 	    return router;
 	}
 )
