@@ -1,42 +1,43 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <meta charset="utf-8">
-    <title>ROBO Admin</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="lib/jquery.js"></script>
-</head>
-<body class="skin-blue sidebar-mini">
-    <div id="app-container" class="wrapper"></div>
-    
-    <!-- Tohle bude lepší dělat server side. Může se pak odstranit i loadování jquery.-->
-    <script>
-        $.get( "app/layouts/main/main-template.html", function( data ) {
-            $( "#app-container" )
-              .append(data);
-          });
-        $.get( "app/views/index/index-template.html", function( data ) {
-            $( "#app-container" )
-              .append(data);
-          });
-        $.get( "app/views/events/events-template.html", function( data ) {
-            $( "#app-container" )
-              .append(data);
-          });
-        $.get( "app/views/events/event-detail-template.html", function( data ) {
-            $( "#app-container" )
-              .append(data);
-          });
-        $.get( "app/views/customers/customers-template.html", function( data ) {
-            $( "#app-container" )
-                    .append(data);
-        });
-        $.get( "app/views/user/templates.html", function( data ) {
-            $( "#app-container" )
-                    .append(data);
-        });
-    </script>
-    <script data-main="app/init.js" src="lib/require.js"></script>
-</body>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="utf-8">
+        <title>ROBO Admin</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="lib/jquery.js"></script>
+        <script src="lib/ckeditor/ckeditor.js"></script>
+    </head>
+    <body class="skin-blue sidebar-mini">
+        <div id="app-container" class="wrapper"></div>
+
+        <!-- Tohle bude lepší dělat server side. Může se pak odstranit i loadování jquery.-->
+        <script>
+            $.get("app/layouts/main/main-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/index/index-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/events/events-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/events/event-detail-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/customers/customers-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/user/templates.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+        </script>
+        <script data-main="app/init.js" src="lib/require.js"></script>
+    </body>
 </html>
