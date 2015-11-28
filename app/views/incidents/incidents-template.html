@@ -1,0 +1,30 @@
+﻿<script id="incidents" type="text/x-kendo-template">
+    <section class="content-header">
+        <h1>Incidenty</h1>
+    </section>
+    <div class="content">
+        <div class="box">
+            <div class="box-header">
+                <h2 class="box-title">Přehled incidentů</h2>
+            </div>
+            <div class="box-body">
+                <div class="row vertical-spacing-M">
+                    <div class="col-sm-5">
+                        <label>
+                            Zobrazovat incidenty za poslední:&nbsp;
+                        </label>
+                        <select data-role="dropdownlist">
+                            <option value="0">1 den</option>
+                            <option value="1">2 dny</option>
+                            <option value="2">3 dny</option>
+                            <option value="3" selected="selected">týden</option>
+                            <option value="4">měsíc</option>
+                            <option value="5">všechny</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="grid-incidents"></div>
+            </div>
+        </div>
+    </div>
+</script>

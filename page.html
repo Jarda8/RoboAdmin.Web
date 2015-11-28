@@ -25,6 +25,10 @@
                 $("#app-container")
                         .append(data);
             });
+            $.get("app/views/incidents/incidents-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
             $.get("app/views/events/event-detail-template.html", function (data) {
                 $("#app-container")
                         .append(data);

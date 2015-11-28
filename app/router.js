@@ -23,6 +23,12 @@ define([
 	        });
 	    });
 
+	    router.route("incidents", function () {
+	        require(["layouts/main/main", "views/incidents/incidents"], function (layoutMain, viewIncidents) {
+	            layoutMain.showIn("#layout-content", viewIncidents);	         
+	    	});
+	    });
+            //tohle zatim nikam moc nevede, ale časem se to možná použije
 	    router.route("customers", function () {
 	        require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {
 	            layoutMain.showIn("#layout-content", viewCustomers);	           
@@ -37,4 +43,4 @@ define([
 
 	    return router;
 	}
-)
+);

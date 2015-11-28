@@ -65,6 +65,7 @@
         "bootstrap",       
         "views/index/index",
         "views/events/events",
+        "views/incidents/incidents",
         "views/events/event-detail",
         "views/customers/customers",
         "views/user/profile"
