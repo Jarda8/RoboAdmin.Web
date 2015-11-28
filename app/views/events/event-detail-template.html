@@ -1,6 +1,6 @@
 ﻿<script id="event-detail" type="text/x-kendo-template">
 <section class="content-header">
-    <h1>Detail události na serveru <span data-bind="text: server-name"></span></h1>
+    <h1>Detail události na serveru Server1 <!--<span data-bind="text: server-name"></span> asi neni třeba bindovat, možná to jde jinak, přes takový to #= nebo : neco nevim#--></h1>
 </section>
 <div class="content">
     <div class="box">
@@ -24,13 +24,15 @@
             </table>
         </div>
     </div>
-    <div class="box">
+    <div class="box event-detail-servers">
         <div class="box-header">
-            <h2 class="box-title">Servery</h2>
+            <h2 class="box-title">Postižené servery</h2>
         </div>
         <div class="box-body">
-            <h3>Aktuální</h3>
+            <h3 class="h5">Aktuální</h3>
             <ul class="list-inline">
+            <li>Server1 (5 / 8 / 8) + 3</li>
+            <li>Server2 (0 / 15 / 20) + 0</li>
                 <!-- Tady to naplnit postiženejma serverama. Kendo data source? -->
                 <!--{% for server in servers %}
                     {% ifequal server.actual "1" %}
@@ -40,8 +42,9 @@
                     {% endifequal %}
                 {% endfor %}-->
             </ul>
-            <h3>Vyřešené</h3>
+            <h3 class="h5">Vyřešené</h3>
             <ul class="list-inline">
+            <li>Server3</li>
                 <!-- Tady to naplnit postiženejma serverama. Kendo data source? -->
                 <!-- {% for item in servers %}
                     {% ifequal item.solved "1" %}
@@ -57,6 +60,8 @@
         </div>
         <div class="box-body">
             <ul class="list-inline">
+            <li>SBS2008</li>
+            <li>ESS2012R2</li>
                 <!--{% for item in systems %}
                     <li>{{item}}</li>
                 {% endfor %} -->
@@ -66,10 +71,13 @@
 
     <div class="box">
         <div class="box-header">
-            <h2 class="box-title">Přítomné faktory</h2>
+            <h2 class="box-title">Potenciální příčiny</h2>
         </div>
         <div class="box-body">
             <ul class="list-inline">
+            <li>DNS server</li>
+            <li>DHCP server</li>
+            <li>ESET</li>
                 <!-- {% for factor in factors %}
                     <li>{{factor}}</li>
                 {% endfor %}-->
@@ -84,78 +92,70 @@
                 <h2 class="box-title">Popis</h2>
             </div>
             <div class="box-body">
-                <h3>CZ</h3>
-                <textarea name="description-cz" id="description-cz" rows="5" cols="80"></textarea>
-                <h3>EN</h3>
-                <textarea name="description-en" id="description-en" rows="5" cols="80"></textarea>
+                <div class="form-group">
+                    <label for="description-original">Originální</label>
+                    <textarea name="description-original" id="description-original" rows="9" cols="80" readonly>Platnost žádosti vypršela, protože server neodpověděl. Název serveru: \Server1 ID relace:0x0 ID stromu:0x0 ID zprávy:0x0 Příkaz: Negotiate Pokyny: Server odpovídá přes protokol TCP, nikoli SMB. Zajistěte, aby serverová služba byla spuštěna a reagovala a aby disky neměly vysokou vstupně-výstupní latenci, což může způsobit, že se budou pro protokol SMB jevit jako nereagující. Rovněž ověřte, že server celkově reaguje a není pozastaven, například zkontrolujte, že se na něho můžete přihlásit.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description-original">Vlastní</label>
+                    <textarea name="description-custom" id="description-custom" rows="5" cols="80">Chyba nasane vždy, když se spustí DNS server. Nemá vážnější následky.</textarea>
+                </div>
             </div>
         </div>
 
-        <div class="form-inline">
-            <div class="form-group detail">
+        <div class="form-inline event-detail-controls">
+            <div class="form-group">
                 <label for="priorities">Priorita</label>
                 <!-- //TODO kendo má asi nějaký svoje selecty, něco s data-role="dropdownlist" - předělat -->
-                <select form="detail-form" name="priority" class="form-control detail" id="priorities">
-                    <option selected>Kritická</option>
+                <select form="detail-form" name="priority" class="form-control" id="priorities">
+                    <option>Kritická</option>
                     <option>Vysoká</option>
-                    <option>Střední</option>
+                    <option selected>Normální</option>
                     <option>Nízká</option>
                     <option>Ignorovat</option>
-                <!--{% for priority in priorities %}
-                    {% ifequal priority event.priority %}
-                        <option selected>{{priority}}</option>
-                    {% else %}
-                        <option>{{priority}}</option>
-                    {% endifequal %}
-                {% endfor %}-->
+                    <!--{% for priority in priorities %}
+                        {% ifequal priority event.priority %}
+                            <option selected>{{priority}}</option>
+                        {% else %}
+                            <option>{{priority}}</option>
+                        {% endifequal %}
+                    {% endfor %}-->
                 </select>
             </div>
 
-            <div class="form-group detail">
-                <label for="states">Stav</label>
-                <!-- //TODO kendo má asi nějaký svoje selecty - předělat -->
-                <select form="detail-form" name="state" class="form-control detail" id="states">
-                        <option selected>Aktuální</option>
-                        <option>Nové</option>
-                        <option>Všechny</option>
-                <!--{% for state in states %}
-                    {% ifequal state event.state %}
-                        <option selected>{{state}}</option>
-                    {% else %}
-                        <option>{{state}}</option>
-                    {% endifequal %}
-                {% endfor %}-->
-                </select>
-            </div>
-
-            <div class="form-group detail">
+            <div class="form-group">
                 <label for="notification">Upozornění</label>
                 <!-- //TODO kendo má asi nějaký svoje selecty - předělat -->
-                <select form="detail-form" name="notification" class="form-control detail" id="notification">
-                        <option selected>Email</option>
-                <!--{% for state in states %}
-                    {% ifequal state event.state %}
-                        <option selected>{{state}}</option>
-                    {% else %}
-                        <option>{{state}}</option>
-                    {% endifequal %}
-                {% endfor %}-->
+                <select form="detail-form" name="notification" class="form-control" id="notification">
+                    <option selected>Email</option>
+                    <!--{% for state in states %}
+                        {% ifequal state event.state %}
+                            <option selected>{{state}}</option>
+                        {% else %}
+                            <option>{{state}}</option>
+                        {% endifequal %}
+                    {% endfor %}-->
                 </select>
-                <input form="detail-form" type="email" name="report-email" class="form-control detail" id="email" value="" placeholder="Zaslat upozornění na email:">
+                <input type="email" name="notification-email" class="form-control" id="email" value="" placeholder="Sem zadejte email">
+            </div>
+
+            <div class="form-group">
+            <div class="checkbox">
+                <label><input type="checkbox" id="state"> Zpracovaná</label>
+            </div>
             </div>
         </div>
-        
+
         <div class="box">
             <div class="box-header">
                 <h2 class="box-title">Řešení</h2>
             </div>
             <div class="box-body">
-                <textarea name="solution" id="solution" rows="5" cols="80"></textarea>
+                <textarea name="solution" id="solution" rows="5" cols="80">Vypnout a zapnout.</textarea>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Uložit změny</button>
         <a href="#events" class="btn btn-default">Zpět</a>
-        
+
     </form>
-</div>
 </script>

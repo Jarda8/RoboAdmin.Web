@@ -6,8 +6,8 @@
                     model: kendo.observable({ id: id }),
                     
                     init: function (e) {
-                        CKEDITOR.replace( 'description-cz' );
-                        CKEDITOR.replace( 'description-en' );
+                        //CKEDITOR.replace( 'description-original' );
+                        CKEDITOR.replace( 'description-custom' );
                         CKEDITOR.replace( 'solution' );
                     }
                 }

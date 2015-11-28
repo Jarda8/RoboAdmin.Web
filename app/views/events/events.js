@@ -9,8 +9,8 @@
                     $("#grid-events").kendoGrid({
                         dataSource: dsEvents,
                         resizable: true,
-                        editable: true,
-                        detailTemplate: kendo.template($("#events-grid-detail").html()),
+                        //editable: true,
+                        //detailTemplate: kendo.template($("#events-grid-detail").html()),
                         groupable: true,
                         sortable: {
                             mode: "single",
@@ -54,7 +54,7 @@
                                     else
                                         return dataItem.priority;
                                 },
-                                editor: function (container, options) {
+                                /*editor: function (container, options) {
                                     var select = $("<select/>");
                                     select.attr("name", options.field);
                                     select.append($("<option />", {value: "neznámá", text: "neznámá"}));
@@ -68,7 +68,7 @@
                                     select.kendoDropDownList();
                                     var kendoDropDown = select.data("kendoDropDownList");
                                     kendoDropDown.open();
-                                },
+                                },*/
                                 width: 100,
                                 filterable: {
                                     multi: true,
@@ -87,6 +87,11 @@
                                 field: "server_name",
                                 title: "Server",
                                 width: 200
+                            },
+                            {
+                                field: "customer",
+                                title: "Zákazník",
+                                width: 100
                             },
                             {
                                 field: "source",

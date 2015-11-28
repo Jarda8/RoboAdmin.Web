@@ -61,7 +61,7 @@
     font-weight: normal;
 }*/
 
-/* Skrýt vertikální scrollbar u gridu */
+/* Skrï¿½t vertikï¿½lnï¿½ scrollbar u gridu */
 .k-grid-header
 {
    padding: 0 !important;
@@ -89,4 +89,23 @@
 .k-grid-filter .k-icon
 {
     opacity: 0.4;
+}
+
+.event-detail-controls {
+    margin-bottom: 15px;
+}
+
+.event-detail-controls .form-group {
+    padding-right: 30px;
+}
+
+.event-detail-controls #email {
+    width: 300px;
+}
+#description-original {
+    width: 100%;
+}
+
+.event-detail-servers h3{
+    font-weight: bold;
 }

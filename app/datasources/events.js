@@ -17,7 +17,7 @@
                 }
             }
         },
-        pageSize: 50,       
+        pageSize: 25,       
         data: [
     {
         "id": "12135120",
