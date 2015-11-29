@@ -14,6 +14,9 @@
                     clickIncidents: function (e) {
                         router.navigate("incidents");
                     },
+                    clickSettings: function (e) {
+                        router.navigate("settings");
+                    },
                     clickCustomers: function (e) {
                         router.navigate("customers");
                     }

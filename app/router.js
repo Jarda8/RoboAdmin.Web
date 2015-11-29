@@ -28,6 +28,13 @@ define([
 	            layoutMain.showIn("#layout-content", viewIncidents);	         
 	    	});
 	    });
+            
+            router.route("settings", function () {
+	        require(["layouts/main/main", "views/settings/settings"], function (layoutMain, viewSettings) {              
+	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        });
+	    });
+            
             //tohle zatim nikam moc nevede, ale časem se to možná použije
 	    router.route("customers", function () {
 	        require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {

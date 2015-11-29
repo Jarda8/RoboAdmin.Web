@@ -37,6 +37,10 @@
                 $("#app-container")
                         .append(data);
             });
+            $.get("app/views/settings/settings-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
             $.get("app/views/user/templates.html", function (data) {
                 $("#app-container")
                         .append(data);

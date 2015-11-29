@@ -68,7 +68,8 @@
         "views/incidents/incidents",
         "views/events/event-detail",
         "views/customers/customers",
-        "views/user/profile"
+        "views/user/profile",
+        "views/settings/settings"
     ], function (layoutMain, router) {
         layoutMain.render("#app-container");
 
