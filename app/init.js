@@ -69,6 +69,7 @@
         "views/events/event-detail",
         "views/customers/customers",
         "views/user/profile",
+        "views/validator-test/validator-test",
         "views/settings/settings"
     ], function (layoutMain, router) {
         layoutMain.render("#app-container");

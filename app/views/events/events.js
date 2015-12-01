@@ -35,7 +35,7 @@
                             {
                                 field: "date_time",
                                 title: "Datum/Čas",
-                                width: 150,
+                                width: 150
                             },
                             {
                                 field: "level",
@@ -47,9 +47,9 @@
                                 field: "priority",
                                 title: "Priorita",
                                 template: function (dataItem) {
-                                    if (dataItem.priority == "kritická")
+                                    if (dataItem.priority === "kritická")
                                         return '<span class="label label-danger">' + dataItem.priority + '</span>';
-                                    else if (dataItem.priority == "vysoká")
+                                    else if (dataItem.priority === "vysoká")
                                         return '<span class="label label-warning">' + dataItem.priority + '</span>';
                                     else
                                         return dataItem.priority;
@@ -78,7 +78,7 @@
                                         {priority: "nízká"},
                                         {priority: "normální"},
                                         {priority: "vysoká"},
-                                        {priority: "kritická"},
+                                        {priority: "kritická"}
                                     ],
                                     checkAll: false
                                 }
@@ -117,15 +117,15 @@
                                     style: "text-align: center"
                                 },
                                 template: function (dataItem) {
-                                    if (dataItem.state == "vyřešená")
+                                    if (dataItem.state === "vyřešená")
                                         return '<i class="fa fa-check" style="color: #00a65a"></i>';
                                     else
                                         return '<i class="fa fa-wrench" style="color: #dd4b39"></i>';
                                 },
                                 width: 115
-                            },
+                            }
                         ]
-                    })
+                    });
                 }
             }
     );

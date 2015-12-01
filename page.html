@@ -45,6 +45,10 @@
                 $("#app-container")
                         .append(data);
             });
+            $.get("app/views/validator-test/validator-test-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
         </script>
         <script data-main="app/init.js" src="lib/require.js"></script>
     </body>

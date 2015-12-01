@@ -109,3 +109,7 @@
 .event-detail-servers h3{
     font-weight: bold;
 }
+
+#grid-events tr {
+    cursor: pointer;
+}
