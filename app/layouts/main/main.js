@@ -10,7 +10,10 @@
                     },
                     clickEvents: function (e) {
                         router.navigate("events");
-                    },
+                    },   
+                    clickEventsDB: function (e) {
+                        router.navigate("eventsDB");
+                    },   
                     clickIncidents: function (e) {
                         router.navigate("incidents");
                     },

@@ -1,0 +1,91 @@
+﻿<script id="eventDB-detail" type="text/x-kendo-template">
+<section class="content-header">
+    <h1>Detail události</h1>
+</section>
+<div class="content">
+    <div class="box">
+        <div class="box-header">
+            <h2 class="box-title">Základní informace</h3>
+        </div>
+        <div class="box-content">
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Zdroj</th>
+                    <th>Typ</th>
+                    <th>Log</th>
+                </tr>
+                <tr>
+                    <td>30809</td>
+                    <td>Microsoft-Windows-SMBClient</td>
+                    <td>Chyba</td>
+                    <td>Microsoft-Windows-SmbClient/Connectivity</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="box">
+        <div class="box-header">
+            <h2 class="box-title">Operační systémy</h2>
+        </div>
+        <div class="box-body">
+            <ul class="list-inline">
+            <li>SBS2008</li>
+            <li>ESS2012R2</li>
+                <!--{% for item in systems %}
+                    <li>{{item}}</li>
+                {% endfor %} -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <h2 class="box-title">Potenciální příčiny</h2>
+        </div>
+        <div class="box-body">
+            <ul class="list-inline">
+            <li>DNS server</li>
+            <li>DHCP server</li>
+            <li>ESET</li>
+                <!-- {% for factor in factors %}
+                    <li>{{factor}}</li>
+                {% endfor %}-->
+            </ul>
+        </div>
+    </div>
+
+    <form>
+
+        <div class="box">
+            <div class="box-header">
+                <h2 class="box-title">Popis</h2>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="description-original">Originální</label>
+                    <textarea name="description-original" id="description-original" rows="9" cols="80" readonly>Platnost žádosti vypršela, protože server neodpověděl. Název serveru: \Server1 ID relace:0x0 ID stromu:0x0 ID zprávy:0x0 Příkaz: Negotiate Pokyny: Server odpovídá přes protokol TCP, nikoli SMB. Zajistěte, aby serverová služba byla spuštěna a reagovala a aby disky neměly vysokou vstupně-výstupní latenci, což může způsobit, že se budou pro protokol SMB jevit jako nereagující. Rovněž ověřte, že server celkově reaguje a není pozastaven, například zkontrolujte, že se na něho můžete přihlásit.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description-original">Vlastní</label>
+                    <textarea name="description-custom" id="description-custom" rows="5" cols="80">Chyba nasane vždy, když se spustí DNS server. Nemá vážnější následky.</textarea>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div class="box">
+            <div class="box-header">
+                <h2 class="box-title">Řešení</h2>
+            </div>
+            <div class="box-body">
+                <textarea name="solution" id="solution" rows="5" cols="80">Vypnout a zapnout.</textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Uložit změny</button>
+        <a href="#eventsDB" class="btn btn-default">Zpět</a>
+
+    </form>
+</script>
