@@ -64,12 +64,15 @@
         "jquery",
         "bootstrap",       
         "views/index/index",
-        "views/events/events",
+        "views/events/events",        
+        "views/eventsDB/eventsDB",        
         "views/incidents/incidents",
-        "views/events/event-detail",
+        "views/events/event-detail", 
+        "views/eventsDB/eventDB-detail",
         "views/customers/customers",
         "views/user/profile",
-        "views/settings/settings"
+        "views/settings/settings",
+        "views/settings/settings-filter-udalost"
     ], function (layoutMain, router) {
         layoutMain.render("#app-container");
 

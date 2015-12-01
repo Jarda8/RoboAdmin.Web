@@ -3,10 +3,10 @@
             "settings",
             {
                 model: {
-                    events: dsSettings
+                    settings: dsSettings
                 },
                 init: function (e) {
-                    $("#grid-events").kendoGrid({
+                    $("#grid-settings").kendoGrid({
                         dataSource: dsSettings,
                         resizable: true,
                         //editable: true,
@@ -24,13 +24,7 @@
                             }
                         },
                         pageable: true,
-                        dataBound: function (e) {
-                            var that = this;
-                            $(that.tbody).on("click", "tr", function (e) {
-                                var rowData = that.dataItem(this);
-                                router.navigate("event-detail/" + rowData.id);
-                            });
-                        },
+                        
                         columns: [
                             {
                                 field: "name",
@@ -54,11 +48,7 @@
                                 template: '<input type="checkbox" #= active ? \'checked="checked"\' : "" # class="chkbx" />',
                                 width: 50
                             },
-                            {
-                                field: "email",
-                                title: "Email",                                
-                                width: 100                                
-                            },
+                      
                         ]
                     })
                 }

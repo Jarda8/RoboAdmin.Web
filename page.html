@@ -24,7 +24,11 @@
             $.get("app/views/events/events-template.html", function (data) {
                 $("#app-container")
                         .append(data);
-            });
+            });   
+            $.get("app/views/eventsDB/eventsDB-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });  
             $.get("app/views/incidents/incidents-template.html", function (data) {
                 $("#app-container")
                         .append(data);
@@ -32,12 +36,21 @@
             $.get("app/views/events/event-detail-template.html", function (data) {
                 $("#app-container")
                         .append(data);
-            });
+            });  
+             $.get("app/views/eventsDB/eventDB-detail-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });  
+            
             $.get("app/views/customers/customers-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });
             $.get("app/views/settings/settings-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/settings/settings-filter-udalost-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });

@@ -22,15 +22,30 @@ define([
 	            layoutMain.showIn("#layout-content", viewEventDetail(id));	          
 	        });
 	    });
-
+            
 	    router.route("incidents", function () {
 	        require(["layouts/main/main", "views/incidents/incidents"], function (layoutMain, viewIncidents) {
 	            layoutMain.showIn("#layout-content", viewIncidents);	         
 	    	});
 	    });
-            
+             router.route("eventsDB", function () {
+	        require(["layouts/main/main", "views/eventsDB/eventsDB"], function (layoutMain, viewEventsDB) {              
+	            layoutMain.showIn("#layout-content", viewEventsDB);	          
+	        });
+	    });
+            router.route("eventDB-detail/:id", function (id) {
+	        require(["layouts/main/main", "views/eventsDB/eventDB-detail"], function (layoutMain, viewEventDBDetail) {              
+	            layoutMain.showIn("#layout-content", viewEventDBDetail(id));	          
+	        });
+	    });
+            	
             router.route("settings", function () {
 	        require(["layouts/main/main", "views/settings/settings"], function (layoutMain, viewSettings) {              
+	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        });
+	    });
+            router.route("settings-filter-udalost", function () {
+	        require(["layouts/main/main", "views/settings/settings-filter-udalost"], function (layoutMain, viewSettings) {              
 	            layoutMain.showIn("#layout-content", viewSettings);	          
 	        });
 	    });
