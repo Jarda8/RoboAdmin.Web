@@ -17,12 +17,27 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
                             allowUnsort: false
                         },
                         filterable: {
+                            extra: false,
                             messages: {
                                 clear: "Zrušit",
                                 filter: "Filtrovat",
-                                checkAll: "Vše"
+                                info: ""
+                            },
+                            operators: {
+                                string: {
+                                    contains: "obsahuje"
+                                }
                             }
                         },
+                        filterMenuInit: function (e) {
+                            if (e.field === "server_name" || e.field === "customer" || e.field === "os") {
+                                var firstValueDropDown = e.container.find("select:eq(0)").data("kendoDropDownList");
+                                setTimeout(function () {
+                                    firstValueDropDown.wrapper.hide();
+                                });
+                            }
+                        }
+                        ,
                         pageable: true,
                         dataBound: function (e) {
                             var that = this;
@@ -38,43 +53,67 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
                                 template: function (dataItem) {
                                     if (dataItem.incidents1 > 0)
                                         return '<span class="label label-danger">' + dataItem.server_name + '</span>';
-                                    else if (dataItem.priority == "vysoká")
+                                    else if (dataItem.priority === "vysoká")
                                         return '<span class="label label-warning">' + dataItem.server_name + '</span>';
                                     else
                                         return dataItem.server_name;
                                 },
-                                width: 200,
+                                filterable: {
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsServers,
+                                            dataTextField: "server_name"
+                                        });
+                                    }
+                                },
+                                width: 200
                             },
                             {
                                 field: "customer",
                                 title: "Zákazník",
-                                width: 200,
+                                filterable: {
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsServers,
+                                            dataTextField: "customer"
+                                        });
+                                    }
+                                },
+                                width: 200
                             },
                             {
                                 field: "os",
                                 title: "OS",
-                                width: 200,
+                                filterable: {
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsServers,
+                                            dataTextField: "os"
+                                        });
+                                    }
+                                },
+                                width: 200
                             },
                             {
                                 field: "incidents",
                                 title: "Závažné události",
-                                template: function (dataItem) { 
-                                        return "" + dataItem.incidents1 + " / " + dataItem.incidents2;
-                                    },
-                                width: 200,
+                                template: function (dataItem) {
+                                    return "" + dataItem.incidents1 + " / " + dataItem.incidents2;
+                                },
+                                width: 200
                             },
                             {
                                 field: "ping",
                                 title: "Odezva",
-                                template: function (dataItem) { 
-                                        return "" + dataItem.ping1 + " / " + dataItem.ping2;
-                                    },
-                                width: 200,
+                                template: function (dataItem) {
+                                    return "" + dataItem.ping1 + " / " + dataItem.ping2;
+                                },
+                                width: 200
                             },
                             {
                                 field: "days_since_re",
                                 title: "Dnů od restartu",
-                                width: 200,
+                                width: 200
                             }
                         ]
                     });

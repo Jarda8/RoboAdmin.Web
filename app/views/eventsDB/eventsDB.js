@@ -17,10 +17,11 @@
                             allowUnsort: false
                         },
                         filterable: {
+                            extra: false,
                             messages: {
                                 clear: "Zrušit",
                                 filter: "Filtrovat",
-                                checkAll: "Vše"
+                                info: ""
                             }
                         },
                         pageable: true,
@@ -36,14 +37,14 @@
                                 field: "priority",
                                 title: "Priorita",
                                 template: function (dataItem) {
-                                    if (dataItem.priority == "kritická")
+                                    if (dataItem.priority === "kritická")
                                         return '<span class="label label-danger">' + dataItem.priority + '</span>';
-                                    else if (dataItem.priority == "vysoká")
+                                    else if (dataItem.priority === "vysoká")
                                         return '<span class="label label-warning">' + dataItem.priority + '</span>';
                                     else
                                         return dataItem.priority;
                                 },
-                                     width: 150,
+                                width: 200,
                                 filterable: {
                                     multi: true,
                                     dataSource: [
@@ -52,53 +53,35 @@
                                         {priority: "nízká"},
                                         {priority: "normální"},
                                         {priority: "vysoká"},
-                                        {priority: "kritická"},
+                                        {priority: "kritická"}
                                     ],
                                     checkAll: false
                                 }
                             },
-                           
                             {
                                 field: "level",
                                 title: "Typ",
-                                width: 150,
-                                filterable: {multi: true}
+                                width: 200,
+                                filterable: {
+                                    multi: true,
+                                    checkAll: false}
                             },
-                            
-                                /*editor: function (container, options) {
-                                    var select = $("<select/>");
-                                    select.attr("name", options.field);
-                                    select.append($("<option />", {value: "neznámá", text: "neznámá"}));
-                                    select.append($("<option />", {value: "ignorovat", text: "ignorovat"}));
-                                    select.append($("<option />", {value: "nízká", text: "nízká"}));
-                                    select.append($("<option />", {value: "normální", text: "normální"}));
-                                    select.append($("<option />", {value: "vysoká", text: "vysoká"}));
-                                    select.append($("<option />", {value: "kritická", text: "kritická"}));
-                                    select.val(options.model.priority);
-                                    select.appendTo(container);
-                                    select.kendoDropDownList();
-                                    var kendoDropDown = select.data("kendoDropDownList");
-                                    kendoDropDown.open();
-                                },*/
-                           
-                            {
-                                field: "source",
-                                title: "Zdroj",
-                                 width: 150,
-                                attributes: {
-                                    style: "white-space: nowrap"
-                                }
-                            },
-                            
                             {
                                 field: "event_id",
                                 title: "ID",
-                                width: 150
+                                width: 200
                             },
-                            
-                            
+                            {
+                                field: "source",
+                                title: "Zdroj",
+                                filterable: {
+                                    
+                                }
+                            }
+
+
                         ]
-                    })
+                    });
                 }
             }
     );

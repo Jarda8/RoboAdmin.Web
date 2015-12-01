@@ -102,7 +102,7 @@
 .event-detail-controls #email {
     width: 300px;
 }
-#description-original {
+#description-original, #eventsdb-description-original, #eventsdb-description-custom, #eventsdb-solution {
     width: 100%;
 }
 
@@ -110,6 +110,6 @@
     font-weight: bold;
 }
 
-#grid-events tr {
+#grid-events tr, #grid-disks tr , #grid-servers tr{
     cursor: pointer;
 }
