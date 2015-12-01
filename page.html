@@ -33,11 +33,23 @@
                 $("#app-container")
                         .append(data);
             });
-            $.get("app/views/customers/customers-template.html", function (data) {
+            $.get("app/views/servers/server-detail-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/disks/disk-settings-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/servers/server-factors-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });
             $.get("app/views/settings/settings-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/customers/customers-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });

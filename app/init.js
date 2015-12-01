@@ -14,6 +14,12 @@
             "lib/kendo/kendo.core.min" : {
                 deps: ["jquery"]
             },
+            "lib/kendo/kendo.dataviz.chart.min": {
+                deps: [
+                    "jquery",
+                    "lib/kendo/kendo.core.min"
+                ]
+            },
             "lib/kendo/kendo.grid.min": {
                 deps: [
                     "jquery",
@@ -67,6 +73,9 @@
         "views/events/events",
         "views/incidents/incidents",
         "views/events/event-detail",
+        "views/servers/server-detail",
+        "views/disks/disk-settings",
+        "views/servers/server-factors",
         "views/customers/customers",
         "views/user/profile",
         "views/validator-test/validator-test",
