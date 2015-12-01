@@ -78,7 +78,6 @@
         "views/servers/server-detail",
         "views/disks/disk-settings",
         "views/servers/server-factors",
-        "views/customers/customers",
         "views/user/profile",
         "views/validator-test/validator-test",
         "views/settings/settings",
