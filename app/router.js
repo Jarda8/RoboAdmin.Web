@@ -1,4 +1,4 @@
-define([
+﻿define([
     "require",
     "kendo"],
         function (require) {
@@ -21,6 +21,24 @@ define([
                     layoutMain.showIn("#layout-content", viewEventDetail(id));
                 });
             });
+
+	    router.route("server-detail/:id", function (id) {
+	        require(["layouts/main/main", "views/servers/server-detail"], function (layoutMain, viewServerDetail) {              
+	            layoutMain.showIn("#layout-content", viewServerDetail(id));	          
+	        });
+	    });
+
+            router.route("disk-settings/:id", function (id) {
+	        require(["layouts/main/main", "views/disks/disk-settings"], function (layoutMain, viewDiskSettings) {
+	            layoutMain.showIn("#layout-content", viewDiskSettings(id));	           
+	        });
+	    });
+            
+            router.route("server-factors/:id", function (id) {
+	        require(["layouts/main/main", "views/servers/server-factors"], function (layoutMain, viewServerFactors) {              
+	            layoutMain.showIn("#layout-content", viewServerFactors(id));	          
+	        });
+	    });
 
             router.route("incidents", function () {
                 require(["layouts/main/main", "views/incidents/incidents"], function (layoutMain, viewIncidents) {
