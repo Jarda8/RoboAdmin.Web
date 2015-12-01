@@ -26,7 +26,7 @@ define(["jquery", "kendo"], function ($) {
             {
                 "id": "2",
                 "name": "Filtr 2",
-                "type": "misto na disku",
+                "type": "disku",
                 "email": "admin@firma.com",
                 "active": "true"  
             },

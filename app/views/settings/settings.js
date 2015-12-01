@@ -47,10 +47,30 @@
                                 template: '<input type="checkbox" #= active ? \'checked="checked"\' : "" # class="chkbx" />',
                                 width: 50
                             },
+                            {
+                                field: "",
+                                command: { text: "Upravit", click: showDetails },                               
+                                width: 50
+                            },
+                            {
+                                field: "",
+                                command: { text: "Smazat", click: deleteFilter },                               
+                                width: 50
+                            },
                       
                         ]
                     })
                 }
+                
             }
-    );
+    );function showDetails(e) {
+                    e.preventDefault();
+
+                    router.navigate("settings-filter-udalost");
+                };
+     function deleteFilter(e) {
+                    e.preventDefault();
+
+                    router.navigate("settings");
+                }
 });
