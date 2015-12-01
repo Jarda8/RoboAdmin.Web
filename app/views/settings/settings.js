@@ -24,7 +24,6 @@
                             }
                         },
                         pageable: true,
-                        
                         columns: [
                             {
                                 field: "name",

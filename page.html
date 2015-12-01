@@ -43,6 +43,18 @@
             });  
             
             $.get("app/views/customers/customers-template.html", function (data) {
+                 $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/servers/server-detail-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/disks/disk-settings-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/servers/server-factors-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });
@@ -50,11 +62,20 @@
                 $("#app-container")
                         .append(data);
             });
+
             $.get("app/views/settings/settings-filter-udalost-template.html", function (data) {
+                  $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/customers/customers-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });
             $.get("app/views/user/templates.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/validator-test/validator-test-template.html", function (data) {
                 $("#app-container")
                         .append(data);
             });
