@@ -82,7 +82,11 @@
         "views/user/profile",
         "views/validator-test/validator-test",
         "views/settings/settings",
-        "views/settings/settings-filter-udalost"
+        "views/settings/settings-filter-udalost",
+        "views/settings/settings-filter-disk",
+        "views/settings/settings-filter-dostupnost",
+        "views/settings/settings-filter-odezva",
+        "views/settings/settings-filter-sluzba"
     ], function (layoutMain, router) {
         layoutMain.render("#app-container");
 

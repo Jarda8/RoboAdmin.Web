@@ -1,4 +1,4 @@
-﻿<script id="settings-filter-udalost" type="text/x-kendo-template">
+﻿<script id="settings-filter-disk" type="text/x-kendo-template">
     <section class="content-header">
         <h1>Nastavení</h1>
     </section>
@@ -17,8 +17,8 @@
                                      Typ upozornění:&nbsp;
                                 </label>
                                 <select data-role="dropdownlist" onChange="window.location.href=this.value">
-                                    <option value="#settings-filter-udalost"   selected="selected">Událost</option>
-                                    <option value="#settings-filter-disk">Misto na disku</option>
+                                    <option value="#settings-filter-udalost" >Událost</option>
+                                    <option value="#settings-filter-disk"   selected="selected">Misto na disku</option>
                                     <option value="#settings-filter-odezva">Vysoká odezva</option>
                                     <option value="#settings-filter-dostupnost">Nedostupny server</option>
                                     <option value="#settings-filter-sluzba">Neběžící služba</option>                                   
@@ -36,43 +36,39 @@
                             <div class="row vertical-spacing-M">
                              <div class="col-sm-5">
                                 <label>
-                                     Priorita:&nbsp;
+                                     Frekvance zasílání:&nbsp;
                                 </label>
                                 <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">Kritická</option>
-                                    <option value="2">Vysoká</option>
-                                    <option value="3" >Normální</option>
-                                    <option value="4">Nízká</option>                                 
+                                    <option value="0">1h</option>
+                                    <option value="1">12h</option>
+                                    <option value="2"  selected="selected">24h</option>
+                                    <option value="3" >2dny</option>
+                                    <option value="4">7dní</option>                                 
                                 </select>
                                 </div>
                             </div>
                             <div class="row vertical-spacing-M">
                              <div class="col-sm-5">
                                 <label>
-                                     Typ:&nbsp;
+                                     Zasílat, pokud je na disku méně než:&nbsp;
                                 </label>
                                 <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">Kritická</option>
-                                    <option value="2">Chyba</option>
-                                    <option value="3" >Upozornění</option>                                                                  
+                                    <option value="0" selected="selected">5 %</option>
+                                    <option value="1">10 %</option>
+                                    <option value="2">15 %</option>
+                                    <option value="3">20 %</option>
+                                    <option value="4">30 %</option>
+                                    <option value="5">40 %</option>
+                                    <option value="6">50 %</option>
+                                    <option value="7">60 %</option>
+                                    <option value="8">70 %</option>
+                                    <option value="9">80 %</option>
+                                    <option value="10">90 %</option>
+                                    <option value="11">95 %</option>                                                                                           
                                 </select>
                                 </div>
                             </div>
-                            <div class="row vertical-spacing-M">
-                             <div class="col-sm-5">
-                                <label>
-                                     Zdroj:&nbsp;
-                                </label>
-                                <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">...</option>
-                                    <option value="2">...</option>
-                                    <option value="3" >...</option>                                                                  
-                                </select>
-                                </div>
-                            </div>
+                            
                             <div class="row vertical-spacing-M">
                              <div class="col-sm-5">
                                 <label>
@@ -118,7 +114,7 @@
                                 </div>
                             </div>
                     <button type="button" class="btn btn-primary" data-bind="events: {click: saveChangedFiltrUdalost}">Uložit</button>
-                    <a href="#settings" class="btn btn-default">Zpět</a>
+                     <a href="#settings" class="btn btn-default">Zpět</a>
                     </div>
                     
                 </div>

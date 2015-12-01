@@ -48,6 +48,26 @@
 	            layoutMain.showIn("#layout-content", viewSettings);	          
 	        });
 	    });
+            router.route("settings-filter-disk", function () {
+	        require(["layouts/main/main", "views/settings/settings-filter-disk"], function (layoutMain, viewSettings) {              
+	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        });
+	    });
+             router.route("settings-filter-odezva", function () {
+	        require(["layouts/main/main", "views/settings/settings-filter-odezva"], function (layoutMain, viewSettings) {              
+	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        });
+	    });
+            router.route("settings-filter-dostupnost", function () {
+	        require(["layouts/main/main", "views/settings/settings-filter-dostupnost"], function (layoutMain, viewSettings) {              
+	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        });
+	    });
+            router.route("settings-filter-sluzba", function () {
+	        require(["layouts/main/main", "views/settings/settings-filter-sluzba"], function (layoutMain, viewSettings) {              
+	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        });
+	    });
             
             //tohle zatim nikam moc nevede, ale časem se to možná použije
 	    router.route("customers", function () {
