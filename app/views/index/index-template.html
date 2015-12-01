@@ -1,3 +1,56 @@
 ﻿<script id="index" type="text/x-kendo-template">
-    <h1>Hello <span data-bind="text: foo"></span></h1>
+    <section class="content-header">
+        <h1>Servery</h1>
+    </section>
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Aktuální zdraví</h3>
+                    </div>
+                    <div class="box-content">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red" style="height: 150px; margin-left: 10px; padding-top: 30px;">
+                                <i class="fa fa-heart">
+                                </i>
+                            </span>
+                            <div class="info-box-content" style="height: 220px;">
+                                <span class="info-box-text">Chybový stav:</span>
+                                <span class="info-box-number">1</span>
+                                <span class="info-box-text">Varovný stav:</span>
+                                <span class="info-box-number">1</span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Přehled serverů</h3>
+            </div>
+            <div class="box-body">
+                <div class="row vertical-spacing-M">
+                    <div class="col-sm-2">
+                        <select data-role="dropdownlist" class="form-control">
+                            <option value="0">Všechny</option>
+                            <option value="1">Chybové</option>
+                            <option value="2">Varovné</option>
+                            <option value="3">Ok</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="state">Zobrazovat jen aktuálně sledované servery</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="grid-servers"></div>
+            </div>
+        </div>
+        
+    </div>
 </script>
