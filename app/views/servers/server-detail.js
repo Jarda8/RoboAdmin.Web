@@ -19,7 +19,6 @@ define(["jquery", "ds/server-events", "ds/server-disks", "app/router", "kendo"],
                             },
                             seriesDefaults: {
                                 type: "line",
-                                style: "smooth"
                             },
                             series: [{
                                 name: "Průměr",
@@ -27,9 +26,6 @@ define(["jquery", "ds/server-events", "ds/server-disks", "app/router", "kendo"],
                             },{
                                 name: "Vrchol",
                                 data: [9.8,5.3,10.8,11.9,9.7,5.3,4.8,4,4.6,4.4,3.9,4.3,4.7,3.8,2.7,5.3,4.4,11.4,4,4.7,6.8,5.4,9.4]
-                            },{
-                                name: "Limit",
-                                data: [12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12]
                             }],
                             valueAxis: {
                                 labels: {
@@ -38,7 +34,18 @@ define(["jquery", "ds/server-events", "ds/server-disks", "app/router", "kendo"],
                                 line: {
                                     visible: false
                                 },
-                                axisCrossingValue: -10
+                                axisCrossingValue: -10,
+                                plotBands: [{
+                                    from: 12,
+                                    to: 14,
+                                    color: "#c00",
+                                    opacity: 0.3
+                                }, {
+                                    from: 12,
+                                    to: 12.1,
+                                    color: "#c00",
+                                    opacity: 0.8
+                                }],
                             },
                             categoryAxis: {
                                 categories: ['-23h', '-22h', '-21h', '-20h', '-19h', '-18h', '-17h', '-16h', '-15h', '-14h', '-13h', '-12h', '-11h', '-10h', '-9h', '-8h', '-7h', '-6h', '-5h', '-4h', '-3h', '-2h', '-1h',],
