@@ -12,7 +12,7 @@
                     incidents2: {type: "Number", editable: false },
                     ping1: {type: "Number", editable: false },
                     ping2: {type: "Number", editable: false },
-                    days_since_re: {type: "Number", editable: false },
+                    days_since_re: {type: "Number", editable: false }
                 }
             }
         },
@@ -281,7 +281,7 @@
         "ping1": 0,
         "ping2": 0,
         "days_since_re": 2
-    },
+    }
 ]
     });
 });

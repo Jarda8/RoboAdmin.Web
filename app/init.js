@@ -1,17 +1,17 @@
-﻿(function() {
+﻿(function () {
     requirejs.config({
         baseUrl: ".",
         paths: {
             jquery: "lib/jquery",
             bootstrap: "lib/bootstrap",
             adminlte: "lib/adminlte/app",
-            kendo: "lib/kendobundle",          
+            kendo: "lib/kendobundle",
             layouts: "app/layouts",
             views: "app/views",
             ds: "app/datasources"
         },
         shim: {
-            "lib/kendo/kendo.core.min" : {
+            "lib/kendo/kendo.core.min": {
                 deps: ["jquery"]
             },
             "lib/kendo/kendo.dataviz.chart.min": {
@@ -38,6 +38,12 @@
                     "lib/kendo/kendo.core.min"
                 ]
             },
+            "lib/kendo/kendo.autocomplete.min": {
+                deps: [
+                    "jquery",
+                    "lib/kendo/kendo.core.min"
+                ]
+            },
             "lib/kendo/cultures/kendo.culture.cs-CZ.min": {
                 deps: [
                     "lib/kendo/kendo.core.min",
@@ -45,8 +51,8 @@
                 ]
             },
             "lib/kendo/messages/kendo.messages.cs-CZ.min": {
-                deps: [                   
-                     "lib/kendo/cultures/kendo.culture.cs-CZ.min"
+                deps: [
+                    "lib/kendo/cultures/kendo.culture.cs-CZ.min"
                 ]
             },
             "bootstrap": {
@@ -64,15 +70,14 @@
     require([
         "layouts/main/main",
         "app/router",
-
         // následující je inlcudnuto pouze kvůli optimizeru, který nedetekuje
         // nekompiluje závislosti při volání require() uvnitř implementací. 
         "jquery",
-        "bootstrap",       
+        "bootstrap",
         "views/index/index",
-        "views/events/events",        
-        "views/eventsDB/eventsDB",        
-        "views/incidents/incidents",      
+        "views/events/events",
+        "views/eventsDB/eventsDB",
+        "views/incidents/incidents",
         "views/eventsDB/eventDB-detail",
         "views/events/event-detail",
         "views/servers/server-detail",
