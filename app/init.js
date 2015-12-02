@@ -85,6 +85,7 @@
         "views/servers/server-factors",
         "views/profile/profile",
         "views/security/login",
+        "views/sidebar/sidebar",
         "views/validator-test/validator-test",
         "views/settings/settings",
         "views/settings/settings-filter-udalost",

@@ -82,6 +82,10 @@
                 $("#app-container")
                         .append(data);
             });
+            $.get("app/views/sidebar/sidebar-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
             $.get("app/views/security/templates.html", function (data) {
                 $("#app-container")
                         .append(data);

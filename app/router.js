@@ -5,153 +5,179 @@
             var router = new kendo.Router();
 	
 	    router.route("/", function () {
-	        require(["layouts/main/main", "views/index/index"], function (layoutMain, viewIndex) {
-	            layoutMain.showIn("#layout-content", viewIndex);	         
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/index/index"], function (layoutMain, sidebar, viewIndex) {
+	            layoutMain.showIn("#layout-content", viewIndex);
+				layoutMain.showIn("#sidebar", sidebar);
 	    	});
 	    });
 
 	    router.route("events", function () {
-	        require(["layouts/main/main", "views/events/events"], function (layoutMain, viewEvents) {              
-	            layoutMain.showIn("#layout-content", viewEvents);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/events/events"], function (layoutMain, sidebar, viewEvents) {
+	            layoutMain.showIn("#layout-content", viewEvents);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
 
 	    router.route("event-detail/:id", function (id) {
-	        require(["layouts/main/main", "views/events/event-detail"], function (layoutMain, viewEventDetail) {              
-	            layoutMain.showIn("#layout-content", viewEventDetail(id));	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/events/event-detail"], function (layoutMain, sidebar, viewEventDetail) {
+	            layoutMain.showIn("#layout-content", viewEventDetail(id));
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             
 	    router.route("incidents", function () {
-	        require(["layouts/main/main", "views/incidents/incidents"], function (layoutMain, viewIncidents) {
-	            layoutMain.showIn("#layout-content", viewIncidents);	         
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/incidents/incidents"], function (layoutMain, sidebar, viewIncidents) {
+	            layoutMain.showIn("#layout-content", viewIncidents);
+				layoutMain.showIn("#sidebar", sidebar);
 	    	});
 	    });
              router.route("eventsDB", function () {
-	        require(["layouts/main/main", "views/eventsDB/eventsDB"], function (layoutMain, viewEventsDB) {              
-	            layoutMain.showIn("#layout-content", viewEventsDB);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/eventsDB/eventsDB"], function (layoutMain, sidebar, viewEventsDB) {
+	            layoutMain.showIn("#layout-content", viewEventsDB);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             router.route("eventDB-detail/:id", function (id) {
-	        require(["layouts/main/main", "views/eventsDB/eventDB-detail"], function (layoutMain, viewEventDBDetail) {              
-	            layoutMain.showIn("#layout-content", viewEventDBDetail(id));	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/eventsDB/eventDB-detail"], function (layoutMain, sidebar, viewEventDBDetail) {
+	            layoutMain.showIn("#layout-content", viewEventDBDetail(id));
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             	
             router.route("settings", function () {
-	        require(["layouts/main/main", "views/settings/settings"], function (layoutMain, viewSettings) {              
-	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings"], function (layoutMain, sidebar, viewSettings) {
+	            layoutMain.showIn("#layout-content", viewSettings);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             router.route("settings-filter-udalost", function () {
-	        require(["layouts/main/main", "views/settings/settings-filter-udalost"], function (layoutMain, viewSettings) {              
-	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-udalost"], function (layoutMain, sidebar, viewSettings) {
+	            layoutMain.showIn("#layout-content", viewSettings);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             router.route("settings-filter-disk", function () {
-	        require(["layouts/main/main", "views/settings/settings-filter-disk"], function (layoutMain, viewSettings) {              
-	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-disk"], function (layoutMain, sidebar, viewSettings) {
+	            layoutMain.showIn("#layout-content", viewSettings);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
              router.route("settings-filter-odezva", function () {
-	        require(["layouts/main/main", "views/settings/settings-filter-odezva"], function (layoutMain, viewSettings) {              
-	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-odezva"], function (layoutMain, sidebar, viewSettings) {
+	            layoutMain.showIn("#layout-content", viewSettings);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             router.route("settings-filter-dostupnost", function () {
-	        require(["layouts/main/main", "views/settings/settings-filter-dostupnost"], function (layoutMain, viewSettings) {              
-	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-dostupnost"], function (layoutMain, sidebar, viewSettings) {
+	            layoutMain.showIn("#layout-content", viewSettings);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             router.route("settings-filter-sluzba", function () {
-	        require(["layouts/main/main", "views/settings/settings-filter-sluzba"], function (layoutMain, viewSettings) {              
-	            layoutMain.showIn("#layout-content", viewSettings);	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-sluzba"], function (layoutMain, sidebar, viewSettings) {
+	            layoutMain.showIn("#layout-content", viewSettings);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             
             //tohle zatim nikam moc nevede, ale časem se to možná použije
 	    router.route("customers", function () {
-	        require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {
-	            layoutMain.showIn("#layout-content", viewCustomers);	           
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/customers/customers"], function (layoutMain, sidebar, viewCustomers) {
+	            layoutMain.showIn("#layout-content", viewCustomers);
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
 
             router.route("events", function () {
-                require(["layouts/main/main", "views/events/events"], function (layoutMain, viewEvents) {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/events/events"], function (layoutMain, sidebar, viewEvents) {
                     layoutMain.showIn("#layout-content", viewEvents);
+					layoutMain.showIn("#sidebar", sidebar);
                 });
             });
 
             router.route("event-detail/:id", function (id) {
-                require(["layouts/main/main", "views/events/event-detail"], function (layoutMain, viewEventDetail) {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/events/event-detail"], function (layoutMain, sidebar, viewEventDetail) {
                     layoutMain.showIn("#layout-content", viewEventDetail(id));
+					layoutMain.showIn("#sidebar", sidebar);
                 });
             });
 
 	    router.route("server-detail/:id", function (id) {
-	        require(["layouts/main/main", "views/servers/server-detail"], function (layoutMain, viewServerDetail) {              
-	            layoutMain.showIn("#layout-content", viewServerDetail(id));	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/servers/server-detail"], function (layoutMain, sidebar, viewServerDetail) {
+	            layoutMain.showIn("#layout-content", viewServerDetail(id));
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
 
             router.route("disk-settings/:id", function (id) {
-	        require(["layouts/main/main", "views/disks/disk-settings"], function (layoutMain, viewDiskSettings) {
-	            layoutMain.showIn("#layout-content", viewDiskSettings(id));	           
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/disks/disk-settings"], function (layoutMain, sidebar, viewDiskSettings) {
+	            layoutMain.showIn("#layout-content", viewDiskSettings(id));
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
             
             router.route("server-factors/:id", function (id) {
-	        require(["layouts/main/main", "views/servers/server-factors"], function (layoutMain, viewServerFactors) {              
-	            layoutMain.showIn("#layout-content", viewServerFactors(id));	          
+	        require(["layouts/main/main", "views/sidebar/sidebar", "views/servers/server-factors"], function (layoutMain, sidebar, viewServerFactors) {
+	            layoutMain.showIn("#layout-content", viewServerFactors(id));
+				layoutMain.showIn("#sidebar", sidebar);
 	        });
 	    });
 
             router.route("incidents", function () {
-                require(["layouts/main/main", "views/incidents/incidents"], function (layoutMain, viewIncidents) {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/incidents/incidents"], function (layoutMain, sidebar, viewIncidents) {
                     layoutMain.showIn("#layout-content", viewIncidents);
+					layoutMain.showIn("#sidebar", sidebar);
                 });
             });
 
             router.route("settings", function () {
-                require(["layouts/main/main", "views/settings/settings"], function (layoutMain, viewSettings) {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings"], function (layoutMain, sidebar, viewSettings) {
                     layoutMain.showIn("#layout-content", viewSettings);
+					layoutMain.showIn("#sidebar", sidebar);
                 });
             });
 
             //tohle zatim nikam moc nevede, ale časem se to možná použije
             router.route("customers", function () {
-                require(["layouts/main/main", "views/customers/customers"], function (layoutMain, viewCustomers) {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/customers/customers"], function (layoutMain, sidebar, viewCustomers) {
                     layoutMain.showIn("#layout-content", viewCustomers);
+					layoutMain.showIn("#sidebar", sidebar);
                 });
             });
 
 			router.route("profile/:action", function (action) {
-				require(["layouts/main/main", "views/profile/profile"], function (layoutMain, viewProfile) {
+				require(["layouts/main/main", "views/sidebar/sidebar", "views/profile/profile"], function (layoutMain, sidebar, viewProfile) {
 					layoutMain.showIn("#layout-content", viewProfile(action));
+					layoutMain.showIn("#sidebar", sidebar);
 				});
 			});
 
 			router.route("profile", function () {
-				require(["layouts/main/main", "views/profile/profile"], function (layoutMain, viewProfile) {
+				require(["layouts/main/main", "views/sidebar/sidebar", "views/profile/profile"], function (layoutMain, sidebar, viewProfile) {
 					layoutMain.showIn("#layout-content", viewProfile(''));
+					layoutMain.showIn("#sidebar", sidebar);
 				});
 			});
 
 			router.route("login", function () {
-				require(["layouts/main/main", "views/security/login"], function (layoutMain,viewLogin) {
+				require(["layouts/main/main", "views/security/login"], function (layoutMain, viewLogin) {
 					layoutMain.showIn("#layout-content", viewLogin);
+					layoutMain.showIn("#sidebar", new kendo.View("<div/>"));
 				});
 			});
 
 			router.route("logout", function () {
 				require(["layouts/main/main", "views/security/login"], function (layoutMain,viewLogin) {
 					layoutMain.showIn("#layout-content", viewLogin);
+					layoutMain.showIn("#sidebar", new kendo.View("<div/>"));
 				});
 			});
 
             router.route("val", function () {
-                require(["layouts/main/main", "views/validator-test/validator-test"], function (layoutMain, viewVal) {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/validator-test/validator-test"], function (layoutMain, sidebar, viewVal) {
                     layoutMain.showIn("#layout-content", viewVal);
+					layoutMain.showIn("#sidebar", sidebar);
                 });
             });
 

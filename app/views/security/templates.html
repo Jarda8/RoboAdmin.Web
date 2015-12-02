@@ -1,3 +1,33 @@
 ﻿<script id="login" type="text/x-kendo-template">
-    <h1>Page: <span data-bind="text: foo"></span></h1>
+
+    <div id="over"> <!-- "over" is over everything like layouts menu etc. :-D -->
+            <div class="card card-container" style="margin-top: 7em;">
+
+                <h1 style="text-align: center; margin-bottom: 1em; margin-top: 0em"><span style="font-weight: 600;">ROBO</span>&nbsp;Admin</h1>
+                <hr/>
+                 <!--<img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" />-->
+                <!--<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />-->
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" id="login-form">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <div class="k-invalid-msg" data-for="inputEmail"></div>
+                    <input  required type="text" id="inputEmail" class="form-control" placeholder="Uživatelské jméno" autofocus>
+                    <div class="k-invalid-msg" data-for="inputPassword"></div>
+                    <input required type="password" id="inputPassword" class="form-control" placeholder="Heslo" >
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Přihlásit se natrvalo
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" data-bind="events: {click: login}">Přihlásit</button>
+                </form><!-- /form -->
+                <hr>
+                <div style="text-align: center">
+                    <a href="#login" class="forgot-password">
+                        Zapomněli jste heslo?
+                    </a>
+                </div>
+            </div><!-- /card-container -->
+        </div>
+    </div>
 </script>
