@@ -78,7 +78,11 @@
                   $("#app-container")
                         .append(data);
             });
-            $.get("app/views/user/templates.html", function (data) {
+            $.get("app/views/profile/profile-templates.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
+            $.get("app/views/security/templates.html", function (data) {
                 $("#app-container")
                         .append(data);
             });

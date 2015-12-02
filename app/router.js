@@ -76,12 +76,6 @@
 	        });
 	    });
 
-            router.route("user/profile", function () {
-                    require(["layouts/main/main", "views/user/profile"], function (layoutMain,viewProfile) {
-                            layoutMain.showIn("#layout-content", viewProfile);
-                    });
-            });
-
             router.route("events", function () {
                 require(["layouts/main/main", "views/events/events"], function (layoutMain, viewEvents) {
                     layoutMain.showIn("#layout-content", viewEvents);
@@ -131,11 +125,29 @@
                 });
             });
 
-            router.route("user/profile", function () {
-                require(["layouts/main/main", "views/user/profile"], function (layoutMain, viewProfile) {
-                    layoutMain.showIn("#layout-content", viewProfile);
-                });
-            });
+			router.route("profile/:action", function (action) {
+				require(["layouts/main/main", "views/profile/profile"], function (layoutMain, viewProfile) {
+					layoutMain.showIn("#layout-content", viewProfile(action));
+				});
+			});
+
+			router.route("profile", function () {
+				require(["layouts/main/main", "views/profile/profile"], function (layoutMain, viewProfile) {
+					layoutMain.showIn("#layout-content", viewProfile(''));
+				});
+			});
+
+			router.route("login", function () {
+				require(["layouts/main/main", "views/security/login"], function (layoutMain,viewLogin) {
+					layoutMain.showIn("#layout-content", viewLogin);
+				});
+			});
+
+			router.route("logout", function () {
+				require(["layouts/main/main", "views/security/login"], function (layoutMain,viewLogin) {
+					layoutMain.showIn("#layout-content", viewLogin);
+				});
+			});
 
             router.route("val", function () {
                 require(["layouts/main/main", "views/validator-test/validator-test"], function (layoutMain, viewVal) {
