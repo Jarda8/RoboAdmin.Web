@@ -1,37 +1,16 @@
 ﻿<script id="index" type="text/x-kendo-template">
     <section class="content-header">
-        <h1>Servery</h1>
+        <h1 class="servers-heading">Servery</h1>
+        <div class="overview">
+            <span class="fa fa-heart fa-lg overview-icon bg-red"></span>
+            <dl>
+                <dt>CHYBNÝ STAV:</dt><dd>1</dd>
+                <dt>VAROVNÝ STAV:</dt><dd>3</dd>
+            </dl>
+        </div>
     </section>
     <div class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Aktuální zdraví</h3>
-                    </div>
-                    <div class="box-content">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red" style="height: 150px; margin-left: 10px; padding-top: 30px;">
-                                <i class="fa fa-heart">
-                                </i>
-                            </span>
-                            <div class="info-box-content" style="height: 220px;">
-                                <span class="info-box-text">Chybový stav:</span>
-                                <span class="info-box-number">1</span>
-                                <span class="info-box-text">Varovný stav:</span>
-                                <span class="info-box-number">1</span>
-                            </div><!-- /.info-box-content -->
-                        </div><!-- /.info-box -->
-
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">Přehled serverů</h3>
-            </div>
+        <div class="box servers-box">
             <div class="box-body">
                 <div class="row vertical-spacing-M">
                     <div class="col-sm-2">

@@ -6,14 +6,50 @@
     width: 100%;
 }
 
-.info-box-icon
+/*.info-box-icon
 {
-    width: 120px;
+    width: 80px;
 }
 
 .info-box-content
 {
     margin-left: 130px;
+}*/
+.overview {
+    display: inline;
+    margin-left: 30px;
+}
+
+.overview-icon {
+    padding: 8px 5px 6px 5px;
+}
+
+.overview dl{
+    display: inline;
+}
+
+.overview dt {
+    display: inline;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+.overview dd {
+    display: inline;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.servers-heading, .events-heading, .incidents-heading {
+    display: inline;
+}
+
+.servers-box, .events-box, .incidents-box {
+    margin-bottom: 0;
+}
+
+.events-filter-label, .incidents-filter-label {
+    font-weight: normal;
 }
 
 .vertical-spacing-M
