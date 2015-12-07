@@ -12,7 +12,9 @@
                     incidents2: {type: "Number", editable: false },
                     ping1: {type: "Number", editable: false },
                     ping2: {type: "Number", editable: false },
-                    days_since_re: {type: "Number", editable: false }
+                    days_since_re: {type: "Number", editable: false },
+                    state: {type: "string"},
+                    incidents: {}
                 }
             }
         },
@@ -20,28 +22,112 @@
         data: [
     {
         "id": "1",
-        "server_name": "Server1",
-        "customer": "OBF",
+        "server_name": "VINSBS.v-invest.local",
+        "customer": "VINVEST",
         "os": "SBS2012",
         "incidents1": 1,
         "incidents2": 3,
         "ping1": 25,
         "ping2": 23,
-        "days_since_re": 12
+        "days_since_re": 12,
+        state: "error",
+        incidents: ["Málo místa na disku C: (< 2GB)"]
     },
     {
         "id": "2",
-        "server_name": "Server2",
-        "customer": "DIGI",
+        "server_name": "SRV-SPA.spartners.local",
+        "customer": "SPARTNERS",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 6,
         "ping2": 8,
-        "days_since_re": 35
+        "days_since_re": 35,
+        state: "warning",
+        incidents: []
     },
     {
         "id": "3",
+        "server_name": "srv-dms.DMS.local",
+        "customer": "DMS",
+        "os": "SBS2008R2",
+        "incidents1": 0,
+        "incidents2": 5,
+        "ping1": 0,
+        "ping2": 0,
+        "days_since_re": 2,
+        state: "ok",
+        incidents: [],
+        state: "ok",
+        incidents: []
+    },
+    {
+        "id": "4",
+        "server_name": "SRV-KR.kralicek.local",
+        "customer": "KRALICEK",
+        "os": "SBS2008R2",
+        "incidents1": 0,
+        "incidents2": 5,
+        "ping1": 0,
+        "ping2": 0,
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
+    },
+    {
+        "id": "5",
+        "server_name": "SRV-GA.GREIF.praha",
+        "customer": "GREIF",
+        "os": "SBS2008R2",
+        "incidents1": 0,
+        "incidents2": 5,
+        "ping1": 0,
+        "ping2": 0,
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
+    },
+    {
+        "id": "6",
+        "server_name": "SRV-INET.inetsol.local",
+        "customer": "INET",
+        "os": "SBS2008R2",
+        "incidents1": 0,
+        "incidents2": 5,
+        "ping1": 0,
+        "ping2": 0,
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
+    },
+    {
+        "id": "7",
+        "server_name": "Server1",
+        "customer": "DIGI",
+        "os": "SBS2008R2",
+        "incidents1": 0,
+        "incidents2": 5,
+        "ping1": 0,
+        "ping2": 0,
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
+    },
+    {
+        "id": "8",
+        "server_name": "Server2",
+        "customer": "DIGI",
+        "os": "SBS2008R2",
+        "incidents1": 0,
+        "incidents2": 5,
+        "ping1": 0,
+        "ping2": 0,
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
+    },
+    {
+        "id": "9",
         "server_name": "Server3",
         "customer": "DIGI",
         "os": "SBS2008R2",
@@ -49,238 +135,204 @@
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "10",
+        "server_name": "Server4",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "11",
+        "server_name": "Server5",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "12",
+        "server_name": "Server6",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "13",
+        "server_name": "Server7",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "14",
+        "server_name": "Server8",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "15",
+        "server_name": "Server9",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "16",
+        "server_name": "Server10",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "17",
+        "server_name": "Server11",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "18",
+        "server_name": "Server12",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "19",
+        "server_name": "Server13",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "20",
+        "server_name": "Server14",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "21",
+        "server_name": "Server15",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "22",
+        "server_name": "Server16",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "23",
+        "server_name": "Server17",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     },
     {
-        "id": "3",
-        "server_name": "Server3",
+        "id": "24",
+        "server_name": "Server18",
         "customer": "DIGI",
         "os": "SBS2008R2",
         "incidents1": 0,
         "incidents2": 5,
         "ping1": 0,
         "ping2": 0,
-        "days_since_re": 2
-    },
-    {
-        "id": "3",
-        "server_name": "Server3",
-        "customer": "DIGI",
-        "os": "SBS2008R2",
-        "incidents1": 0,
-        "incidents2": 5,
-        "ping1": 0,
-        "ping2": 0,
-        "days_since_re": 2
-    },
-    {
-        "id": "3",
-        "server_name": "Server3",
-        "customer": "DIGI",
-        "os": "SBS2008R2",
-        "incidents1": 0,
-        "incidents2": 5,
-        "ping1": 0,
-        "ping2": 0,
-        "days_since_re": 2
-    },
-    {
-        "id": "3",
-        "server_name": "Server3",
-        "customer": "DIGI",
-        "os": "SBS2008R2",
-        "incidents1": 0,
-        "incidents2": 5,
-        "ping1": 0,
-        "ping2": 0,
-        "days_since_re": 2
-    },
-    {
-        "id": "3",
-        "server_name": "Server3",
-        "customer": "DIGI",
-        "os": "SBS2008R2",
-        "incidents1": 0,
-        "incidents2": 5,
-        "ping1": 0,
-        "ping2": 0,
-        "days_since_re": 2
-    },
-    {
-        "id": "3",
-        "server_name": "Server3",
-        "customer": "DIGI",
-        "os": "SBS2008R2",
-        "incidents1": 0,
-        "incidents2": 5,
-        "ping1": 0,
-        "ping2": 0,
-        "days_since_re": 2
-    },
-    {
-        "id": "3",
-        "server_name": "Server3",
-        "customer": "DIGI",
-        "os": "SBS2008R2",
-        "incidents1": 0,
-        "incidents2": 5,
-        "ping1": 0,
-        "ping2": 0,
-        "days_since_re": 2
+        "days_since_re": 2,
+        state: "ok",
+        incidents: []
     }
 ]
     });

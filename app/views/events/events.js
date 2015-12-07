@@ -1,10 +1,11 @@
-﻿define(["jquery", "ds/events", "app/router", "kendo"], function ($, dsEvents, router) {
+﻿define(["jquery", "ds/events/events", "ds/events/events-overview", "app/router", "kendo"], function ($, dsEvents, dsEventsOverview, router) {
     return new kendo.View(
             "events",
             {
-                model: {
-                    events: dsEvents
-                },
+//                model: {
+//                    events: dsEvents,
+//                    eventsOverview: dsEventsOverview
+//                },
                 init: function (e) {
                     $("#grid-events").kendoGrid({
                         dataSource: dsEvents,
@@ -17,10 +18,24 @@
                             allowUnsort: false
                         },
                         filterable: {
+                            extra: false,
                             messages: {
                                 clear: "Zrušit",
                                 filter: "Filtrovat",
-                                checkAll: "Vše"
+                                info: ""
+                            }
+//                            operators: {
+//                                string: {
+//                                    contains: "obsahuje"
+//                                }
+//                            }
+                        },
+                        filterMenuInit: function (e) {
+                            if (e.field === "server_name" || e.field === "customer" || e.field === "source") {
+                                var firstValueDropDown = e.container.find("select:eq(0)").data("kendoDropDownList");
+                                setTimeout(function () {
+                                    firstValueDropDown.wrapper.hide();
+                                });
                             }
                         },
                         pageable: true,
@@ -35,13 +50,26 @@
                             {
                                 field: "date_time",
                                 title: "Datum/Čas",
-                                width: 150
+                                width: 150,
+                                format: "{0:d.M.yyyy H:m:s}",
+                                filterable: {
+                                    extra: true,
+                                    ui: function (element) {
+                                        element.kendoDateTimePicker({
+                                            culture: "cs-CZ",
+                                            format: "d.M.yyyy H:m:s"
+                                        });
+                                    }
+                                }
                             },
                             {
                                 field: "level",
                                 title: "Typ",
                                 width: 100,
-                                filterable: {multi: true}
+                                filterable: {
+                                    multi: true,
+                                    checkAll: false
+                                }
                             },
                             {
                                 field: "priority",
@@ -55,20 +83,20 @@
                                         return dataItem.priority;
                                 },
                                 /*editor: function (container, options) {
-                                    var select = $("<select/>");
-                                    select.attr("name", options.field);
-                                    select.append($("<option />", {value: "neznámá", text: "neznámá"}));
-                                    select.append($("<option />", {value: "ignorovat", text: "ignorovat"}));
-                                    select.append($("<option />", {value: "nízká", text: "nízká"}));
-                                    select.append($("<option />", {value: "normální", text: "normální"}));
-                                    select.append($("<option />", {value: "vysoká", text: "vysoká"}));
-                                    select.append($("<option />", {value: "kritická", text: "kritická"}));
-                                    select.val(options.model.priority);
-                                    select.appendTo(container);
-                                    select.kendoDropDownList();
-                                    var kendoDropDown = select.data("kendoDropDownList");
-                                    kendoDropDown.open();
-                                },*/
+                                 var select = $("<select/>");
+                                 select.attr("name", options.field);
+                                 select.append($("<option />", {value: "neznámá", text: "neznámá"}));
+                                 select.append($("<option />", {value: "ignorovat", text: "ignorovat"}));
+                                 select.append($("<option />", {value: "nízká", text: "nízká"}));
+                                 select.append($("<option />", {value: "normální", text: "normální"}));
+                                 select.append($("<option />", {value: "vysoká", text: "vysoká"}));
+                                 select.append($("<option />", {value: "kritická", text: "kritická"}));
+                                 select.val(options.model.priority);
+                                 select.appendTo(container);
+                                 select.kendoDropDownList();
+                                 var kendoDropDown = select.data("kendoDropDownList");
+                                 kendoDropDown.open();
+                                 },*/
                                 width: 100,
                                 filterable: {
                                     multi: true,
@@ -86,29 +114,71 @@
                             {
                                 field: "server_name",
                                 title: "Server",
-                                width: 200
+                                width: 200,
+                                filterable: {
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsEvents,
+                                            dataTextField: "server_name"
+                                        });
+                                    },
+                                    operators: {
+                                        string: {
+                                            startswith: "Začíná na"
+                                        }
+                                    }
+                                }
                             },
                             {
                                 field: "customer",
                                 title: "Zákazník",
-                                width: 100
+                                width: 100,
+                                filterable: {
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsEvents,
+                                            dataTextField: "customer"
+                                        });
+                                    },
+                                    operators: {
+                                        string: {
+                                            startswith: "Začíná na"
+                                        }
+                                    }
+                                }
                             },
                             {
                                 field: "source",
                                 title: "Zdroj",
-                                attributes: {
-                                    style: "white-space: nowrap"
+                                filterable: {
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsEvents,
+                                            dataTextField: "source"
+                                        });
+                                    },
+                                    operators: {
+                                        string: {
+                                            startswith: "Začíná na"
+                                        }
+                                    }
                                 }
                             },
                             {
                                 field: "event_id",
                                 title: "ID",
-                                width: 120
+                                width: 120,
+                                filterable: {
+                                    extra: true
+                                }
                             },
                             {
                                 field: "occurences",
                                 title: "Výskytů",
-                                width: 100
+                                width: 100,
+                                filterable: {
+                                    extra: true
+                                }
                             },
                             {
                                 field: "state",
@@ -122,10 +192,18 @@
                                     else
                                         return '<i class="fa fa-wrench" style="color: #dd4b39"></i>';
                                 },
-                                width: 115
+                                width: 115,
+                                filterable: {
+                                    multi: true,
+                                    checkAll: false
+                                }
                             }
                         ]
                     });
+                    dsEventsOverview.read();
+                    $("#critical").html(dsEventsOverview.data()[0].critical);
+                    $("#highPriority").html(dsEventsOverview.data()[0].highPriority);
+                    $("#normalPriority").html(dsEventsOverview.data()[0].normalPriority);
                 }
             }
     );

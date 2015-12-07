@@ -36,8 +36,7 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
                                     firstValueDropDown.wrapper.hide();
                                 });
                             }
-                        }
-                        ,
+                        },
                         pageable: true,
                         dataBound: function (e) {
                             var that = this;
@@ -51,9 +50,9 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
                                 field: "server_name",
                                 title: "Název serveru",
                                 template: function (dataItem) {
-                                    if (dataItem.incidents1 > 0)
+                                    if (dataItem.state === "error")
                                         return '<span class="label label-danger">' + dataItem.server_name + '</span>';
-                                    else if (dataItem.priority === "vysoká")
+                                    else if (dataItem.state === "warning")
                                         return '<span class="label label-warning">' + dataItem.server_name + '</span>';
                                     else
                                         return dataItem.server_name;

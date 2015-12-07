@@ -184,8 +184,8 @@
                 });
             });
 
-            router.route("val", function () {
-                require(["layouts/main/main", "views/sidebar/sidebar", "views/validator-test/validator-test"], function (layoutMain, sidebar, viewVal) {
+            router.route("test", function () {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/test/test"], function (layoutMain, sidebar, viewVal) {
                     layoutMain.showIn("#layout-content", viewVal);
                     //layoutMain.showIn("#sidebar", sidebar);
                 });

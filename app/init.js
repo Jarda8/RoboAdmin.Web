@@ -44,6 +44,12 @@
                     "lib/kendo/kendo.core.min"
                 ]
             },
+//            "lib/kendo/kendo.datetimepicker.min": {
+//                deps: [
+//                    "jquery",
+//                    "lib/kendo/kendo.core.min"
+//                ]
+//            },
             "lib/kendo/cultures/kendo.culture.cs-CZ.min": {
                 deps: [
                     "lib/kendo/kendo.core.min",
@@ -86,7 +92,7 @@
         "views/profile/profile",
         "views/security/login",
         "views/sidebar/sidebar",
-        "views/validator-test/validator-test",
+        "views/test/test",
         "views/settings/settings",
         "views/settings/settings-filter-udalost",
         "views/settings/settings-filter-disk",
