@@ -53,6 +53,10 @@
                 $("#app-container")
                         .append(data);
             });
+            $.get("app/views/servers/add-server-template.html", function (data) {
+                $("#app-container")
+                        .append(data);
+            });
             $.get("app/views/settings/settings-template.html", function (data) {
                 $("#app-container")
                         .append(data);

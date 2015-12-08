@@ -44,6 +44,12 @@
                     "lib/kendo/kendo.core.min"
                 ]
             },
+//            "lib/kendo/kendo.editor.min": {
+//                deps: [
+//                    "jquery",
+//                    "lib/kendo/kendo.core.min"
+//                ]
+//            },
 //            "lib/kendo/kendo.datetimepicker.min": {
 //                deps: [
 //                    "jquery",
@@ -89,6 +95,7 @@
         "views/servers/server-detail",
         "views/disks/disk-settings",
         "views/servers/server-factors",
+        "views/servers/add-server",
         "views/profile/profile",
         "views/security/login",
         "views/sidebar/sidebar",

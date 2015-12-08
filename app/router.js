@@ -13,6 +13,13 @@
                 });
             });
 
+            router.route("add-server", function () {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/servers/add-server"], function (layoutMain, sidebar, viewAddServer) {
+                    layoutMain.showIn("#layout-content", viewAddServer);
+                    //layoutMain.showIn("#sidebar", sidebar);
+                });
+            });
+
             router.route("events", function () {
                 require(["layouts/main/main", "views/sidebar/sidebar", "views/events/events"], function (layoutMain, sidebar, viewEvents) {
                     layoutMain.showIn("#layout-content", viewEvents);
@@ -24,7 +31,7 @@
 
             router.route("event-detail/:id", function (id) {
                 require(["layouts/main/main", "views/sidebar/sidebar", "views/events/event-detail"], function (layoutMain, sidebar, viewEventDetail) {
-                    layoutMain.showIn("#layout-content", viewEventDetail(id));
+                    layoutMain.showIn("#layout-content", viewEventDetail/*(id)*/);
                     //layoutMain.showIn("#sidebar", sidebar);
                 });
             });
@@ -99,20 +106,6 @@
                 });
             });
 
-            router.route("events", function () {
-                require(["layouts/main/main", "views/sidebar/sidebar", "views/events/events"], function (layoutMain, sidebar, viewEvents) {
-                    layoutMain.showIn("#layout-content", viewEvents);
-                    //layoutMain.showIn("#sidebar", sidebar);
-                });
-            });
-
-            router.route("event-detail/:id", function (id) {
-                require(["layouts/main/main", "views/sidebar/sidebar", "views/events/event-detail"], function (layoutMain, sidebar, viewEventDetail) {
-                    layoutMain.showIn("#layout-content", viewEventDetail(id));
-                    //layoutMain.showIn("#sidebar", sidebar);
-                });
-            });
-
             router.route("server-detail/:id", function (id) {
                 require(["layouts/main/main", "views/sidebar/sidebar", "views/servers/server-detail"], function (layoutMain, sidebar, viewServerDetail) {
                     layoutMain.showIn("#layout-content", viewServerDetail(id));
@@ -130,28 +123,6 @@
             router.route("server-factors/:id", function (id) {
                 require(["layouts/main/main", "views/sidebar/sidebar", "views/servers/server-factors"], function (layoutMain, sidebar, viewServerFactors) {
                     layoutMain.showIn("#layout-content", viewServerFactors(id));
-                    //layoutMain.showIn("#sidebar", sidebar);
-                });
-            });
-
-            router.route("incidents", function () {
-                require(["layouts/main/main", "views/sidebar/sidebar", "views/incidents/incidents"], function (layoutMain, sidebar, viewIncidents) {
-                    layoutMain.showIn("#layout-content", viewIncidents);
-                    //layoutMain.showIn("#sidebar", sidebar);
-                });
-            });
-
-            router.route("settings", function () {
-                require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings"], function (layoutMain, sidebar, viewSettings) {
-                    layoutMain.showIn("#layout-content", viewSettings);
-                    //layoutMain.showIn("#sidebar", sidebar);
-                });
-            });
-
-            //tohle zatim nikam moc nevede, ale časem se to možná použije
-            router.route("customers", function () {
-                require(["layouts/main/main", "views/sidebar/sidebar", "views/customers/customers"], function (layoutMain, sidebar, viewCustomers) {
-                    layoutMain.showIn("#layout-content", viewCustomers);
                     //layoutMain.showIn("#sidebar", sidebar);
                 });
             });
