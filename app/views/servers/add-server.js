@@ -4,7 +4,7 @@ define(["jquery", "ds/servers", "kendo"], function ($, dsServers) {
             {
                 init: function (e) {
                     currentId = 50;
-                    $("#add-server").click(function (e) {
+                    $("#addserver").click(function (e) {
                         e.preventDefault();
 
                         var $serverName = $("input[name='server-name']");
@@ -25,9 +25,14 @@ define(["jquery", "ds/servers", "kendo"], function ($, dsServers) {
                             state: "ok",
                             incidents: []
                         });
-                        $serverName.val("");
-                        $customer.val("");
-                        $os.val("");
+//                        $serverName.val("");
+//                        $customer.val("");
+//                        $os.val("");
+                        
+                        var $alert = $("#alert");
+                        $alert.html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>\n\
+                                        <h4><i class='icon fa fa-check'></i> Server byl úspěšně uložen!</h4></div>");
+       
                     });
                 }
             }

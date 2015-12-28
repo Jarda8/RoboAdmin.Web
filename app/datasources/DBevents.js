@@ -4,16 +4,16 @@
             model: {
                 id: "id",
                 fields: {
-                    id: { type: "Number", editable: false },
-                    occurences: {type: "Number", editable: false },
-                    date_time: {type: "String", editable: false },
-                    server_name: { type: "String", editable: false },
-                    source: {type: "String", editable: false },
-                    event_id: { type: "Number", editable: false },
-                    priority: {type: "String", editable: true },
-                    state: {type: "String", editable: false },
-                    level: {type: "String", editable: false },
-                    log: { type: "String", editable: false }
+                    id: { type: "number"},
+                    occurences: {type: "number"},
+                    date_time: {type: "date"},
+                    server_name: { type: "string"},
+                    source: {type: "string"},
+                    event_id: { type: "number"},
+                    priority: {type: "string"},
+                    state: {type: "string"},
+                    level: {type: "string"},
+                    log: { type: "string"}
                 }
             }
         },

@@ -1,6 +1,6 @@
 <script id="server-detail" type="text/x-kendo-template">
 <section class="content-header">
-    <h1>Detail serveru: Server2 <!--<span data-bind="text: server-name"></span> asi neni třeba bindovat, možná to jde jinak, přes takový to #= nebo : neco nevim#--></h1>
+    <h1>Detail serveru: Server2</h1>
 </section>
 
 <div class="content">
@@ -20,17 +20,17 @@
         
             <div class="form-inline event-detail-controls">
                 <div class="form-group">
-                    <label for="priorities">Hranice odezvy</label>
-                    <input type="number" name="notification-limit" class="form-control" id="limit" value="12">
+                    <label>Hranice odezvy</label>
+                    <input type="number" name="notification-limit" class="form-control" id="limit" data-bind="value: ping_limit">
                 </div>
 
-                <div class="form-group">
+                <!--div class="form-group">
                     <select data-role="dropdownlist" class="form-control">
                         <option selected>Poslední den po hodinách</option>
                         <option>Poslední hodina po pěti minutách</option>
                         <option>Poslední měsíc po dnech</option>
                     </select>
-                </div>
+                </div-->
 
             </div>
             <div class="demo-section k-content wide">
@@ -48,9 +48,11 @@
                     <h2 class="box-title">Nefunkční služby</h2>
                 </div>
                 <div class="box-body">
-                    <label>1. RemoteRegistry</label>
-
-                    <button class="btn btn-default">Ignorovat</button>
+                    <ol id="bad-services">
+                        # for (var i = 0; i < bad_services.length; i++) { #
+                            <li>#= bad_services[i] # <button class="btn btn-default btn-xs" value=#= i #>Ignorovat</button></li>
+                        # } #
+                    </ol>
                 </div>
             </div>
     
@@ -59,9 +61,12 @@
                     <h2 class="box-title">Ignorované služby</h2>
                 </div>
                 <div class="box-body">
-                    <label>1. ShellHWDetection</label>
-
-                    <button class="btn btn-default">Sledovat</button>
+                    
+                    <ol id="ignored-services">
+                        # for (var i = 0; i < ignored_services.length; i++) { #
+                            <li>#= ignored_services[i] # <button class="btn btn-default btn-xs" value=#= i #>Sledovat</button></li>
+                        # } #
+                    </ol>
                 </div>
             </div>
         </div>
@@ -73,9 +78,13 @@
         </div>
         <div class="box-body">
             
-            <label>Norton</label>
+            <ol id="factors">
+                # for (var i = 0; i < factors_presented.length; i++) { #
+                    <li>#= factors_presented[i] #</li>
+                # } #
+            </ol>
     
-            <a href="#server-factors/1" class="btn btn-default">Přidat</a>
+            <a href="\\#server-factors/1" class="btn btn-default">Přidat</a>
         </div>
     </div>
     
@@ -84,7 +93,7 @@
             <h2 class="box-title">Log událostí na serveru</h2>
         </div>
         <div class="box-body">
-            <div id="grid-events"></div>
+            <div id="grid-incidents"></div>
         </div>
     </div>
 

@@ -4,13 +4,13 @@ define(["jquery", "kendo"], function ($) {
             model: {
                 id: "id",
                 fields: {
-                    id: { type: "Number"},
-                    date_time: {type: "String"},
-                    server_name: {type: "String"},
-                    customer: {type: "String"},
-                    source: {type: "String"},
-                    level: {type: "String"},
-                    description: {type: "String"}
+                    id: { type: "number"},
+                    date_time: {type: "date"},
+                    server_name: {type: "string"},
+                    customer: {type: "string"},
+                    source: {type: "string"},
+                    level: {type: "string"},
+                    description: {type: "string"}
                 }
             }
         },

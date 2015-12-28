@@ -64,6 +64,7 @@
                             } else {
                                 event.set("state", "v řešení");
                             }
+                            window.location.href = "/RoboAdmin/page.html\#events";
                     });
                 }
             }

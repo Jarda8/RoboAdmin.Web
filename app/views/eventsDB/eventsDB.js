@@ -24,6 +24,14 @@
                                 info: ""
                             }
                         },
+                        filterMenuInit: function (e) {
+                            if (e.field === "source") {
+                                var firstValueDropDown = e.container.find("select:eq(0)").data("kendoDropDownList");
+                                setTimeout(function () {
+                                    firstValueDropDown.wrapper.hide();
+                                });
+                            }
+                        },
                         pageable: true,
                         dataBound: function (e) {
                             var that = this;
@@ -69,13 +77,24 @@
                             {
                                 field: "event_id",
                                 title: "ID",
-                                width: 200
+                                width: 200,
+                                filterable: {extra: true}
                             },
                             {
                                 field: "source",
                                 title: "Zdroj",
                                 filterable: {
-                                    
+                                    ui: function (e) {
+                                        e.kendoAutoComplete({
+                                            dataSource: dsDBEvents,
+                                            dataTextField: "source"
+                                        });
+                                    },
+                                    operators: {
+                                        string: {
+                                            startswith: "Začíná na"
+                                        }
+                                    }
                                 }
                             }
 

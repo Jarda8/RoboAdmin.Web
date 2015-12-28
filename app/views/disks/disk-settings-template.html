@@ -1,6 +1,6 @@
 <script id="disk-settings" type="text/x-kendo-template">
 <section class="content-header">
-    <h1>Server2: Nastavení disku C <!--<span data-bind="text: server-name"></span> asi neni třeba bindovat, možná to jde jinak, přes takový to #= nebo : neco nevim#--></h1>
+    <h1>Server2: Nastavení disku C</h1>
 </section>
 
 <div class="content">
@@ -19,22 +19,22 @@
                 <div class="form-group">
                     <div class="form-inline event-detail-controls">
                         <label for="capacity">Hranice varování [GB]</label>
-                        <input type="number" name="limit-warning" class="form-control" id="warning" value="">
+                        <input type="number" name="limit-warning" class="form-control" id="limit-warning" value="#= limitWarning #">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-inline event-detail-controls">
                         <label for="capacity">Hranice chyby [GB]</label>
-                        <input type="number" name="limit-warning" class="form-control" id="warning" value="">
+                        <input type="number" name="limit-error" class="form-control" id="limit-error" value="#= limitError #">
                     </div>
                 </div>
         
-                <button type="submit" class="btn btn-primary">Uložit</button>
+                <button id="saveDisk" type="submit" class="btn btn-primary">Uložit</button>
             </form>
         </div>
     </div>        
-        <a href="#server-detail/1" class="btn btn-default">Zpět</a>
-        <a href="#server-detail/1" class="btn btn-default">Odstranit disk</a>
+        <a href="\\#server-detail/1" class="btn btn-default">Zpět</a>
+        <button id="removeDisk" class="btn btn-default">Odstranit disk</button>
 </div>
 
 </script>

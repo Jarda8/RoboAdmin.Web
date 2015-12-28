@@ -23,7 +23,7 @@ define(["jquery", "kendo"], function ($) {
                     time3d: {type: "int"},
                     time2d: {type: "int"},
                     time1d: {type: "int"},
-                    timeToday: {type: "int"},
+                    timeToday: {type: "int"}
                 }
             }
         },

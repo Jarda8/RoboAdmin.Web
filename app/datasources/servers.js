@@ -4,15 +4,15 @@
             model: {
                 id: "id",
                 fields: {
-                    id: { type: "Number", editable: false },
-                    server_name: { type: "String", editable: false },
-                    customer: {type: "String", editable: false },
-                    os: { type: "String", editable: false },
-                    incidents1: {type: "Number", editable: false },
-                    incidents2: {type: "Number", editable: false },
-                    ping1: {type: "Number", editable: false },
-                    ping2: {type: "Number", editable: false },
-                    days_since_re: {type: "Number", editable: false },
+                    id: { type: "number", editable: false },
+                    server_name: { type: "string", editable: false },
+                    customer: {type: "string", editable: false },
+                    os: { type: "string", editable: false },
+                    incidents1: {type: "number", editable: false },
+                    incidents2: {type: "number", editable: false },
+                    ping1: {type: "number", editable: false },
+                    ping2: {type: "number", editable: false },
+                    days_since_re: {type: "number", editable: false },
                     state: {type: "string"},
                     incidents: {}
                 }

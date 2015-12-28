@@ -2,9 +2,10 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
     return new kendo.View(
             "index",
             {
-                model: {
-                    servers: dsServers
-                },
+//                model: {
+//                    servers: dsServers
+//                },
+
                 init: function (e) {
                     $("#grid-servers").kendoGrid({
                         dataSource: dsServers,
@@ -22,12 +23,12 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
                                 clear: "Zrušit",
                                 filter: "Filtrovat",
                                 info: ""
-                            },
-                            operators: {
-                                string: {
-                                    contains: "obsahuje"
-                                }
                             }
+//                            operators: {
+//                                string: {
+//                                    contains: "obsahuje"
+//                                }
+//                            }
                         },
                         filterMenuInit: function (e) {
                             if (e.field === "server_name" || e.field === "customer" || e.field === "os") {
@@ -94,25 +95,34 @@ define(["jquery", "ds/servers", "app/router", "kendo"], function ($, dsServers, 
                                 width: 200
                             },
                             {
-                                field: "incidents",
+                                field: "incidents1",
                                 title: "Závažné události",
                                 template: function (dataItem) {
                                     return "" + dataItem.incidents1 + " / " + dataItem.incidents2;
                                 },
-                                width: 200
+                                width: 200,
+                                filterable: {
+                                    extra: true
+                                }
                             },
                             {
-                                field: "ping",
+                                field: "ping1",
                                 title: "Odezva",
                                 template: function (dataItem) {
                                     return "" + dataItem.ping1 + " / " + dataItem.ping2;
                                 },
-                                width: 200
+                                width: 200,
+                                filterable: {
+                                    extra: true
+                                }
                             },
                             {
                                 field: "days_since_re",
                                 title: "Dnů od restartu",
-                                width: 200
+                                width: 200,
+                                filterable: {
+                                    extra: true
+                                }
                             }
                         ]
                     });
