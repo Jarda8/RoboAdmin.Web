@@ -16,12 +16,12 @@
                                 <label>
                                      Typ upozornění:&nbsp;
                                 </label>
-                                <select data-role="dropdownlist" onChange="window.location.href=this.value">
-                                    <option value="#settings-filter-udalost" >Událost</option>
-                                    <option value="#settings-filter-disk" >Misto na disku</option>
-                                    <option value="#settings-filter-odezva"   selected="selected">Vysoká odezva</option>
-                                    <option value="#settings-filter-dostupnost">Nedostupny server</option>
-                                    <option value="#settings-filter-sluzba">Neběžící služba</option>                                   
+                                <select data-role="dropdownlist"  name="typ-drop" onChange="window.location.href='#settings-filter-' + this.value">
+                                    <option value="udalost">Událost</option>
+                                    <option value="disk">Misto na disku</option>
+                                    <option value="odezva"  selected="selected">Vysoká odezva</option>
+                                    <option value="dostupnost">Nedostupny server</option>
+                                    <option value="sluzba">Neběžící služba</option>                                   
                                 </select>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                 <label>
                                      Název filtru:&nbsp;
                                 </label>
-                                <input  id="name" >
+                                <input  id="name" name="filter-name">
                                 </div>
                             </div>
                             <div class="row vertical-spacing-M">
@@ -107,11 +107,11 @@
                                 <label>
                                      Email:&nbsp;
                                 </label>
-                                <input  id="name" >
+                                <input  id="name" name="filter-email">
                                 </div>
                             </div>
-                    <button type="button" class="btn btn-primary" data-bind="events: {click: saveChangedFiltrUdalost}">Uložit</button>
-                     <a href="#settings" class="btn btn-default">Zpět</a>
+                     <button id="addfilter" class="btn btn-primary">Přidat</button>
+                     <a href="\\#settings" class="btn btn-default">Zpět</a>
                     </div>
                     
                 </div>

@@ -1,12 +1,14 @@
-﻿define(["jquery", "ds/settings", "app/router", "kendo"], function ($, dsSettings, router) {
+﻿define(["jquery", "views/settings/settings-filter-data", "app/router", "kendo"], function ($, dsSettings, router) {
     return new kendo.View(
             "settings",
             {
                 model: {
                     settings: dsSettings
                 },
+                
                 init: function (e) {
-                    $("#grid-settings").kendoGrid({
+                    var currentID =0;
+                    var grid = $("#grid-settings").kendoGrid({
                         dataSource: dsSettings,
                         resizable: true,
                         //editable: true,
@@ -24,12 +26,13 @@
                             }
                         },
                         pageable: true,
+                        
                         columns: [
                             {
                                 field: "name",
                                 title: "Název filtru",
                                 width: 150
-                            },
+                            },                            
                             {
                                 field: "type",
                                 title: "Typ",
@@ -60,17 +63,26 @@
                       
                         ]
                     })
+                    function showDetails(e) {
+                    e.preventDefault();
+                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                   // router.navigate("settings-filter-"+dataItem.type);
+                 
+                   
+                   
+                    router.navigate("settings-filter-udalost/"+dataItem.id);
+                };
                 }
                 
             }
-    );function showDetails(e) {
-                    e.preventDefault();
-
-                    router.navigate("settings-filter-udalost");
-                };
+    );
      function deleteFilter(e) {
                     e.preventDefault();
-
-                    router.navigate("settings");
+                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                    dsSettings.remove(dataItem);
+                    for (var i = 0; i< dsSettings.lenght; i++){
+                        dsSettings[i].id=i;
+                    }
+                 
                 }
 });

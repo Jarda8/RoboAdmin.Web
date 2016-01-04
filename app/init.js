@@ -102,6 +102,7 @@
         "views/test/test",
         "views/settings/settings",
         "views/settings/settings-filter-udalost",
+        "views/settings/settings-filter-add",
         "views/settings/settings-filter-disk",
         "views/settings/settings-filter-dostupnost",
         "views/settings/settings-filter-odezva",

@@ -67,9 +67,15 @@
                     //layoutMain.showIn("#sidebar", sidebar);
                 });
             });
-            router.route("settings-filter-udalost", function () {
+            router.route("settings-filter-udalost/:id", function (id) {
                 require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-udalost"], function (layoutMain, sidebar, viewSettings) {
-                    layoutMain.showIn("#layout-content", viewSettings);
+                    layoutMain.showIn("#layout-content", viewSettings(id));
+                    //layoutMain.showIn("#sidebar", sidebar);
+                });
+            });
+            router.route("settings-filter-add", function () {
+                require(["layouts/main/main", "views/sidebar/sidebar", "views/settings/settings-filter-add"], function (layoutMain, sidebar, viewSettings) {
+                    layoutMain.showIn("#layout-content", viewSettings());
                     //layoutMain.showIn("#sidebar", sidebar);
                 });
             });

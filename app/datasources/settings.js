@@ -5,12 +5,11 @@ define(["jquery", "kendo"], function ($) {
                 id: "id",
                 fields: {
                     id: { type: "Number"},
-                    date_time: {type: "String"},
-                    server_name: {type: "String"},
-                    customer: {type: "String"},
-                    source: {type: "String"},
-                    level: {type: "String"},
-                    description: {type: "String"}
+                    name: {type: "String"},
+                    type: {type: "String"},
+                    email: {type: "String"},
+                    active: {type: "String"},
+                   
                 }
             }
         },
@@ -26,7 +25,7 @@ define(["jquery", "kendo"], function ($) {
             {
                 "id": "2",
                 "name": "Filtr 2",
-                "type": "disku",
+                "type": "disk",
                 "email": "admin@firma.com",
                 "active": "true"  
             },

@@ -7,7 +7,7 @@
             <div class="col-sm-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Nastavit filtr</h3>
+                        <h3 class="box-title">Upravit filtr</h3>
                     </div>
                     <div class="box-body">
                     
@@ -16,12 +16,19 @@
                                 <label>
                                      Typ upozornění:&nbsp;
                                 </label>
-                                <select data-role="dropdownlist" onChange="window.location.href=this.value">
-                                    <option value="#settings-filter-udalost"   selected="selected">Událost</option>
-                                    <option value="#settings-filter-disk">Misto na disku</option>
-                                    <option value="#settings-filter-odezva">Vysoká odezva</option>
-                                    <option value="#settings-filter-dostupnost">Nedostupny server</option>
-                                    <option value="#settings-filter-sluzba">Neběžící služba</option>                                   
+                                #var j = 0; #
+                                # for (var  i = 0; i< datas.length; i++) {if (datas[i].id == ids) {j = i;  break; }}#
+                                #if (datas[j].type == "udalost") var udal = "selected='selected'"#
+                                # if (datas[j].type === "disk") var disk = "selected='selected'"#
+                                # if (datas[j].type === "odezva") var odezva = "selected='selected'"#
+                                # if (datas[j].type === "dostupnost") var dostupnost = "selected='selected'"#
+                                # if (datas[j].type === "sluzba") var sluzba = "selected='selected'"#
+                                <select data-role="dropdownlist"  name="typ-drop" value=#= datas[j].type #>
+                                    <option value="udalost"   #=udal#>Událost</option>
+                                    <option value="disk" #=disk#>Misto na disku</option>
+                                    <option value="odezva" #=odezva#>Vysoká odezva</option>
+                                    <option value="dostupnost" #=dostupnost#>Nedostupny server</option>
+                                    <option value="sluzba" #=sluzba#>Neběžící služba</option>                                   
                                 </select>
                                 </div>
                             </div>
@@ -30,7 +37,9 @@
                                 <label>
                                      Název filtru:&nbsp;
                                 </label>
-                                <input  id="name" >
+                        
+                                
+                                <input  id="name" name="filter-name" value=#= datas[j].name #>
                                 </div>
                             </div>
                             <div class="row vertical-spacing-M">
@@ -38,38 +47,38 @@
                                 <label>
                                      Priorita:&nbsp;
                                 </label>
-                                <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">Kritická</option>
-                                    <option value="2">Vysoká</option>
-                                    <option value="3" >Normální</option>
-                                    <option value="4">Nízká</option>                                 
+                                #if (datas[j].priority == "0") var par0 = "selected='selected'"#
+                                # if (datas[j].priority === "1") var par1 = "selected='selected'"#
+                                # if (datas[j].priority === "2") var par2 = "selected='selected'"#
+                                # if (datas[j].priority === "3") var par3 = "selected='selected'"#
+                                # if (datas[j].priority === "4") var par4 = "selected='selected'"#
+                                
+                                <select data-role="dropdownlist" name="priority">
+                                    <option value="0" #=par0#>Všechny</option>
+                                    <option value="1" #=par1#>Kritická</option>
+                                    <option value="2" #=par2#>Vysoká</option>
+                                    <option value="3" #=par3#>Normální</option>
+                                    <option value="4" #=par4#>Nízká</option>                                 
                                 </select>
                                 </div>
                             </div>
-                            <div class="row vertical-spacing-M">
-                             <div class="col-sm-5">
-                                <label>
-                                     Typ:&nbsp;
-                                </label>
-                                <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">Kritická</option>
-                                    <option value="2">Chyba</option>
-                                    <option value="3" >Upozornění</option>                                                                  
-                                </select>
-                                </div>
-                            </div>
+                            
                             <div class="row vertical-spacing-M">
                              <div class="col-sm-5">
                                 <label>
                                      Zdroj:&nbsp;
                                 </label>
-                                <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">...</option>
-                                    <option value="2">...</option>
-                                    <option value="3" >...</option>                                                                  
+                                #par0=""; par1="";par2="";par3=""#
+                                #if (datas[j].source == "0")  par0 = "selected='selected'"#
+                                # if (datas[j].source === "1")  par1 = "selected='selected'"#
+                                # if (datas[j].source === "2")  par2 = "selected='selected'"#
+                                # if (datas[j].source === "3")  par3 = "selected='selected'"#
+                              
+                                <select data-role="dropdownlist" name="source" >
+                                    <option value="0" #=par0#>Všechny</option>
+                                    <option value="1" #=par1#>...</option>
+                                    <option value="2" #=par2#>...</option>
+                                    <option value="3" #=par3#>...</option>                                                                  
                                 </select>
                                 </div>
                             </div>
@@ -78,10 +87,15 @@
                                 <label>
                                      Server:&nbsp;
                                 </label>
-                                <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">Server1</option>
-                                    <option value="2">Server2</option>                                                                                           
+                                #par0=""; par1="";par2="";par3=""#
+                                #if (datas[j].server == "0")  par0 = "selected='selected'"#
+                                # if (datas[j].server === "1")  par1 = "selected='selected'"#
+                                # if (datas[j].server === "2")  par2 = "selected='selected'"#
+                             
+                                <select data-role="dropdownlist" name="server" >
+                                    <option value="0" #=par0#>Všechny</option>
+                                    <option value="1" #=par1#>Server1</option>
+                                    <option value="2" #=par2#>Server2</option>                                                                                           
                                 </select>
                                 </div>
                             </div>
@@ -90,11 +104,16 @@
                                 <label>
                                      Zákazník:&nbsp;
                                 </label>
-                                <select data-role="dropdownlist">
-                                    <option value="0" selected="selected">Všechny</option>
-                                    <option value="1">Zákazník1</option>
-                                    <option value="2">Zákazník2</option>
-                                    <option value="3" >Zákazník3</option>                                                                  
+                                #par0=""; par1="";par2="";par3=""#
+                                #if (datas[j].customer == "0")  par0 = "selected='selected'"#
+                                # if (datas[j].customer === "1")  par1 = "selected='selected'"#
+                                # if (datas[j].customer === "2")  par2 = "selected='selected'"#
+                                # if (datas[j].customer === "3")  par3 = "selected='selected'"#
+                                <select data-role="dropdownlist" name="customer" >
+                                    <option value="0" #=par0#>Všechny</option>
+                                    <option value="1" #=par1#>Zákazník1</option>
+                                    <option value="2" #=par2#>Zákazník2</option>
+                                    <option value="3" #=par3#>Zákazník3</option>                                                                  
                                 </select>
                                 </div>
                             </div>
@@ -105,7 +124,7 @@
                                 </label>
                                 <select data-role="dropdownlist">
                                     <option value="0" selected="selected">Email:</option>
-                                    <option value="1">...</option>                                                                                                
+                                                                                                                                    
                                 </select>
                                 </div>
                             </div>
@@ -114,62 +133,18 @@
                                 <label>
                                      Email:&nbsp;
                                 </label>
-                                <input  id="name" >
+                                <input  id="email" name="filter-email" value=#= datas[j].email #>
                                 </div>
                             </div>
-                    <button type="button" class="btn btn-primary" data-bind="events: {click: saveChangedFiltrUdalost}">Uložit</button>
-                    <a href="#settings" class="btn btn-default">Zpět</a>
+                     <button id="addfilter" class="btn btn-primary">Uložit</button>
+                    <a href="\\#settings" class="btn btn-default">Zpět</a>
                     </div>
                     
                 </div>
             </div>
-            <!-- Tohle jsem zrušil, je to tu nechaný jenom jako vzor -->
-            <!--div class="col-sm-6">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Vyřešeno událostí</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="progress-group">
-                            <span class="progress-text">Kritické události</span>
-                            <span class="progress-number"><b>192</b>/200</span>
-                            <div class="progress sm">
-                                <div class="progress-bar progress-bar-red" style="width: 95%"></div>
-                            </div>
-                        </div><!-- /.progress-group -->
-                        <!--div class="progress-group">
-                            <span class="progress-text">S vysokou prioritou</span>
-                            <span class="progress-number"><b>310</b>/400</span>
-                            <div class="progress sm">
-                                <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                            </div>
-                        </div><!-- /.progress-group -->
-                        <!--div class="progress-group">
-                            <span class="progress-text">S normální prioritou</span>
-                            <span class="progress-number"><b>480</b>/800</span>
-                            <div class="progress sm">
-                                <div class="progress-bar progress-bar-green" style="width: 70%"></div>
-                            </div>
-                        </div><!-- /.progress-group -->
-                        <!--div class="progress-group">
-                            <span class="progress-text">S nízkou prioritou</span>
-                            <span class="progress-number"><b>30</b>/500</span>
-                            <div class="progress sm">
-                                <div class="progress-bar progress-bar-light-blue" style="width: 20%"></div>
-                            </div>
-                        </div><!-- /.progress-group -->
-                    <!--/div>
-                </div>
-            </div-->
+           
         </div>
         
     </div>
 </script>
 
-<!-- zatim se nepoužívá. Možná to bude ve výsledku -->
-<script id="events-grid-detail" type="text/x-kendo-template">
-    <p>Platnost žádosti vypršela, protože server neodpověděl. Název serveru: \Server1 ID relace:0x0 ID stromu:0x0 ID zprávy:0x0 Příkaz: Negotiate
-    Pokyny: Server odpovídá přes protokol TCP, nikoli SMB. Zajistěte, aby serverová služba byla spuštěna a reagovala a aby disky neměly vysokou
-    vstupně-výstupní latenci, což může způsobit, že se budou pro protokol SMB jevit jako nereagující. Rovněž ověřte, že server celkově reaguje a není
-    pozastaven, například zkontrolujte, že se na něho můžete přihlásit.</p>
-</script>

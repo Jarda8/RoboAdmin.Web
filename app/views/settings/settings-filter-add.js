@@ -1,21 +1,15 @@
 ﻿define(["jquery", "views/settings/settings-filter-data", "app/router", "kendo"], function ($, data, router) {
     return function (id){
     return new kendo.View(
-            "settings-filter-udalost",
+            "settings-filter-add",
             {                
-                evalTemplate: true,      
-                model: {
-                    datas: data,
-                    ids:id
-                },
+                      
+                model: data,
                 init: function (e) {                                        
                     var currentId = data.length;
                     $("#addfilter").click(function (e) {
                         e.preventDefault();
-                        
-                        
-                        var j = 0;
-                        for (var  i = 0; i< data.length; i++) {if (data[i].id == id) {j = i;  break; }}
+
                         var $filterName = $("input[name='filter-name']");
                         var $typ = $("select[name='typ-drop']");
                         var $email = $("input[name='filter-email']");
@@ -23,8 +17,9 @@
                         var $source = $("select[name='source']");
                         var $server = $("select[name='server']");
                         var $customer = $("select[name='customer']");
+                       
                         
-                        data.splice(j,1,{
+                        data.push({
                             id: id,
                             name: $filterName.val(),
                             type: $typ.val(),
@@ -33,9 +28,8 @@
                             priority: $priority.val(),
                             source: $source.val(),
                             server: $server.val(),
-                            customer: $customer.val()                            
+                            customer: $customer.val()                         
                         });
-                        
 //                       
                         router.navigate("#settings");
                         var $alert = $("#alert");
