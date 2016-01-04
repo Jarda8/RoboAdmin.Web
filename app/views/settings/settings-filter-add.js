@@ -20,7 +20,7 @@
                        
                         
                         data.push({
-                            id: id,
+                            id: currentId,
                             name: $filterName.val(),
                             type: $typ.val(),
                             email: $email.val(),
