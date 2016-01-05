@@ -9,6 +9,7 @@
             <h2 class="box-title">Přidat potenciální příčiny chyb</h2>
         </div>
         <div class="box-body">
+            <div id="alert"></div>
             <form id="add-factor-form">
                 <div class="form-group">
                     <select class="form-control">
@@ -28,10 +29,11 @@
             <h2 class="box-title">Vytvořit novou potenciální příčinu chyb</h2>
         </div>
         <div class="box-body">
-            <form>
+            <div id="alert2"></div>
+            <form id="create-factor-form">
                 <div class="form-group">
                     <label>Název: </label>
-                    <input type="text" name="new-factor" class="form-control" value="">
+                    <input type="text" name="new-factor" class="form-control" value="" required validationMessage="Nazev je povinný údaj">
                 </div>
                 <button id="add-factor-btn" class="btn btn-primary">Vytvořit</button>
             </form>
