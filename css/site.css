@@ -325,3 +325,7 @@ body, html {
 #eventsdb-descriptions p, #events-descriptions p {
     max-width: 80em;
 }
+
+a:hover {
+    cursor: pointer;
+}
