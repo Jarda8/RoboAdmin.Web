@@ -30,7 +30,7 @@
                         columns: [
                             {
                                 field: "name",
-                                title: "Název filtru",
+                                title: "Název upozornění",
                                 width: 150
                             },                            
                             {
@@ -71,7 +71,7 @@
                    
                    
                     router.navigate("settings-filter-udalost/"+dataItem.id);
-                };
+                };                                          
                 }
                 
             }
