@@ -56,15 +56,29 @@
                             toolbar: true
                         }});
 
-                    $("#save-event-detail").click(function (e) {
-                            var event = dsEvents.get(12135120);
-                            event.set("priority", viewModel.get("priority"));
-                            if (viewModel.get("state")) {
-                                event.set("state", "vyřešená");
-                            } else {
-                                event.set("state", "v řešení");
-                            }
-                            window.location.href = "/RoboAdmin/page.html\#events";
+//                    $("#save-event-detail").click(function (e) {
+//                        var event = dsEvents.get(12135120);
+//                        event.set("priority", viewModel.get("priority"));
+//                        if (viewModel.get("state")) {
+//                            event.set("state", "vyřešená");
+//                        } else {
+//                            event.set("state", "v řešení");
+//                        }
+//                        window.location.href = "/RoboAdmin/page.html\#events";
+//                    });
+
+                    $("#state").change(function (e) {
+                        var event = dsEvents.get(12135120);
+                        if (viewModel.get("state")) {
+                            event.set("state", "vyřešená");
+                        } else {
+                            event.set("state", "v řešení");
+                        }
+                    });
+
+                    $("#priorities").change(function (e) {
+                        var event = dsEvents.get(12135120);
+                        event.set("priority", viewModel.get("priority"));
                     });
                 }
             }
