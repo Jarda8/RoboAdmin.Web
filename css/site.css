@@ -316,3 +316,12 @@ body, html {
 .forgot-password:focus{
     color: #3F6474;
 }
+
+#eventsdb-descriptions h3, #events-descriptions h3 {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#eventsdb-descriptions p, #events-descriptions p {
+    max-width: 80em;
+}

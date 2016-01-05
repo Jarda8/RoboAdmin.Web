@@ -85,13 +85,16 @@
             <div class="box-header">
                 <h2 class="box-title">Popis</h2>
             </div>
-            <div class="box-body">
-                <div class="form-group">
+            <div class="box-body" id="events-descriptions">
+            <h3>Originální</h3>
+                <!--div class="form-group">
                     <label for="description-original">Originální</label>
                     <textarea name="description-original" id="description-original" rows="9" cols="80" readonly>#= original_description #</textarea>
-                </div>
+                </div-->
+                <p>#= original_description #</p>
+                <h3>Vlastní</h3>
                 <div class="form-group">
-                    <label for="description-custom">Vlastní</label>
+                    <!--label for="description-custom">Vlastní</label-->
                     <textarea name="description-custom" id="description-custom" rows="5" cols="80" data-bind="value: custom_description"></textarea>
                     <button class="btn btn-primary" id="save-custom-description">Uložit popis</button>
                 </div>
